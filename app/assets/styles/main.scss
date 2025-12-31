@@ -1,0 +1,23 @@
+/**
+ * Main SCSS Entry Point
+ * - 모든 스타일 파일을 import하는 진입점
+ * - 이 파일에는 직접적인 스타일 선언 없이 import만 수행
+ */
+
+// ===========================
+// 1. Reset
+// ===========================
+@use 'reset';
+
+// ===========================
+// 2. Base
+// ===========================
+@use 'base/typography';
+@use 'base/utilities';
+
+// ===========================
+// 3. Components
+// ===========================
+@use 'components/button';
+@use 'components/card';
+@use 'components/form';

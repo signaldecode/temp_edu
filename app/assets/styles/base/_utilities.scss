@@ -1,0 +1,115 @@
+/**
+ * Utility Classes
+ * - 범용 유틸리티 클래스
+ */
+
+@use '../tokens/colors' as *;
+@use '../tokens/typography' as *;
+@use '../tokens/spacing' as *;
+
+// ===========================
+// Accessibility
+// ===========================
+
+// Visually Hidden (A11y)
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Skip Link (A11y)
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: $space-4;
+  z-index: $z-tooltip;
+  padding: $space-2 $space-4;
+  background-color: $color-surface;
+  border: 1px solid $color-border-focus;
+  border-radius: $radius-md;
+  font-weight: $font-weight-medium;
+
+  &:focus {
+    top: $space-4;
+  }
+}
+
+// ===========================
+// Layout
+// ===========================
+
+// Container
+.container {
+  width: 100%;
+  max-width: $container-xl;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+
+  @media (min-width: $container-md) {
+    padding-left: $container-padding-md;
+    padding-right: $container-padding-md;
+  }
+
+  @media (min-width: $container-lg) {
+    padding-left: $container-padding-lg;
+    padding-right: $container-padding-lg;
+  }
+}
+
+// Section
+.section {
+  padding-top: $section-padding-y;
+  padding-bottom: $section-padding-y;
+
+  @media (min-width: $container-lg) {
+    padding-top: $section-padding-y-lg;
+    padding-bottom: $section-padding-y-lg;
+  }
+}
+
+// Section Header
+.section-header {
+  text-align: center;
+  margin-bottom: $space-10;
+
+  &__title {
+    font-size: $heading-2-size;
+    font-weight: $heading-2-weight;
+    margin-bottom: $space-3;
+
+    @media (min-width: $container-md) {
+      font-size: $heading-1-size;
+    }
+  }
+
+  &__subtitle {
+    font-size: $body-lg-size;
+    color: $color-text-secondary;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// ===========================
+// Misc
+// ===========================
+
+// Image placeholder (for dev)
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $neutral-200;
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+}

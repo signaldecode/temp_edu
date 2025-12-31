@@ -1,0 +1,20 @@
+/**
+ * Card Component
+ * - 카드 스타일
+ */
+
+@use '../tokens/colors' as *;
+@use '../tokens/typography' as *;
+@use '../tokens/spacing' as *;
+
+.card {
+  background-color: $color-surface;
+  border: 1px solid $color-border-light;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  transition: box-shadow $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+}

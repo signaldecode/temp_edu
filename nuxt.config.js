@@ -8,6 +8,17 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxt/scripts'
-  ]
+    '@nuxt/scripts',
+  ],
+
+  css: [
+    '~/assets/styles/main.scss',
+  ],
+
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
 })
