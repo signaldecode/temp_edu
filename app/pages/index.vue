@@ -4,9 +4,8 @@ import HeroSection from '~/components/home/HeroSection.vue'
 import CoursesSection from '~/components/home/CoursesSection.vue'
 import InstructorsSection from '~/components/home/InstructorsSection.vue'
 import ReviewsSection from '~/components/home/ReviewsSection.vue'
-import PartnersSection from '~/components/home/PartnersSection.vue'
+import PartnersSection from '~/components/common/PartnersSection.vue'
 import FaqSection from '~/components/home/FaqSection.vue'
-import ContactSection from '~/components/home/ContactSection.vue'
 
 const data = mainData
 
@@ -41,8 +40,7 @@ useHead({
     <CoursesSection :data="data.home.courses" />
     <InstructorsSection :data="data.home.instructors" />
     <ReviewsSection :data="data.home.reviews" />
-    <PartnersSection :data="data.home.partners" />
+    <PartnersSection :data="data.home.partners" variant="brand" />
     <FaqSection :data="data.home.faq" />
-    <ContactSection :data="data.home.contact" />
   </main>
 </template>

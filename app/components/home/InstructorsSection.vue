@@ -1,5 +1,6 @@
 <script setup>
-import InstructorCard from '~/components/home/InstructorCard.vue'
+import InstructorCard from '~/components/courses/InstructorCard.vue'
+import InstructorModal from '~/components/modal/InstructorModal.vue'
 
 const props = defineProps({
   data: {
@@ -7,6 +8,19 @@ const props = defineProps({
     required: true
   }
 })
+
+const selectedInstructor = ref(null)
+const isModalOpen = ref(false)
+
+const handleInstructorClick = (instructor) => {
+  selectedInstructor.value = instructor
+  isModalOpen.value = true
+}
+
+const handleModalClose = () => {
+  isModalOpen.value = false
+  selectedInstructor.value = null
+}
 </script>
 
 <template>
@@ -33,10 +47,19 @@ const props = defineProps({
           :key="instructor.id"
           class="instructors-section__item"
         >
-          <InstructorCard :instructor="instructor" />
+          <InstructorCard
+            :instructor="instructor"
+            @click="handleInstructorClick(instructor)"
+          />
         </li>
       </ul>
     </div>
+
+    <InstructorModal
+      :instructor="selectedInstructor"
+      :is-open="isModalOpen"
+      @close="handleModalClose"
+    />
   </section>
 </template>
 
@@ -50,16 +73,13 @@ const props = defineProps({
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: $card-gap-lg;
+    grid-template-columns: 1fr;
+    gap: $space-4;
     list-style: none;
 
     @media (min-width: $container-md) {
       grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (min-width: $container-lg) {
-      grid-template-columns: repeat(4, 1fr);
+      gap: $card-gap-lg;
     }
   }
 

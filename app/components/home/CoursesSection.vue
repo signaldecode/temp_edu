@@ -147,12 +147,13 @@ const handleCategoryChange = (categoryId) => {
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: $card-gap-lg;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-3;
     list-style: none;
 
     @media (min-width: $container-md) {
       grid-template-columns: repeat(2, 1fr);
+      gap: $card-gap-lg;
     }
 
     @media (min-width: $container-lg) {

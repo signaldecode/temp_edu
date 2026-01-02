@@ -11,7 +11,7 @@ alwaysApply: true
 
 1️⃣ 구조가 튼튼하고 재사용 가능한 템플릿 유지  
 2️⃣ 고객사 맞춤 커스터마이징을 “최소 수정”으로 빠르게 수행  
-3️⃣ 구조는 코드, 내용은 data, 스타일은 token으로 관리  
+3️⃣ 구조는 코드, 내용은 data, 스타일은 별도의 scss 파일과 token으로 관리
 4️⃣ 간결한 JavaScript 코드로 웹최적화  
 5️⃣ SEO / AEO / GEO에 유리한 구조를 기본 내장  
 6️⃣ 웹 접근성(WCAG, A11y)을 기본적으로 준수하는 컴포넌트/페이지 설계  
@@ -351,6 +351,7 @@ class="cta-button"
 - `.nuxt`, `.output`, `node_modules` 수정
 - inline style
 - HEX / px 직접 사용
+- 컴포넌트 파일 내 스타일 선언 금지, 스타일 내의 분류에 맞는 스타일시트에 선언
 - UI 텍스트/alt/aria를 코드에 직접 하드코딩
 - 타입 없는 any 남발
 - data 구조 무시하고 임의 문자열 삽입

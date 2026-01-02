@@ -81,28 +81,3 @@ useHead({
   </section>
 </template>
 
-<style lang="scss" scoped>
-@use '~/assets/styles/tokens/colors' as *;
-@use '~/assets/styles/tokens/typography' as *;
-@use '~/assets/styles/tokens/spacing' as *;
-
-.faq-section {
-  background-color: $color-background;
-
-  &__list {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: $color-surface;
-    border: 1px solid $color-border-light;
-    border-radius: $radius-xl;
-    padding: 0 $space-6;
-  }
-
-  &__more {
-    display: flex;
-    justify-content: center;
-    margin-top: $space-10;
-  }
-}
-</style>

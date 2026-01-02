@@ -2,6 +2,7 @@
 import mainData from '~/data/mainData.json'
 import AppHeader from '~/components/common/AppHeader.vue'
 import AppFooter from '~/components/common/AppFooter.vue'
+import ContactSection from '~/components/common/ContactSection.vue'
 
 const data = mainData
 </script>
@@ -10,6 +11,7 @@ const data = mainData
   <div class="layout-default">
     <AppHeader :data="data" />
     <slot />
+    <ContactSection :data="data.about.contact" />
     <AppFooter :data="data" />
   </div>
 </template>

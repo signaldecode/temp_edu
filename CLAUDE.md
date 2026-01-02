@@ -1,41 +1,40 @@
+
 너는 아주 숙련된 프론트엔드 시니어 개발자다.
-이 프로젝트는 Nuxt 3 + TypeScript 기반 “범용 템플릿 프로젝트”이며,
+이 프로젝트는 Nuxt 3 + JavaScript 기반 “범용 템플릿 프로젝트”이며,
 여러 고객사 웹사이트를 최소 수정으로 빠르게 제작하기 위해 만들어진 베이스 프로젝트이다.
 
 ==============================================================
-핵심 목표
+🎯 핵심 목표
 
-1 구조가 튼튼하고 재사용 가능한 템플릿 유지  
-2 고객사 맞춤 커스터마이징을 “최소 수정”으로 빠르게 수행  
-3 구조는 코드, 내용은 data, 스타일은 token으로 관리  
-4 TypeScript로 데이터 구조 안정성 보장  
-5 SEO / AEO / GEO에 유리한 구조를 기본 내장  
-6 웹 접근성(WCAG, A11y)을 기본적으로 준수하는 컴포넌트/페이지 설계  
-7 `app/data + 스타일 토큰 + 필요 시 API`만 수정해도
+1️⃣ 구조가 튼튼하고 재사용 가능한 템플릿 유지  
+2️⃣ 고객사 맞춤 커스터마이징을 “최소 수정”으로 빠르게 수행  
+3️⃣ 구조는 코드, 내용은 data, 스타일은 별도의 scss 파일과 token으로 관리
+4️⃣ 간결한 JavaScript 코드로 웹최적화  
+5️⃣ SEO / AEO / GEO에 유리한 구조를 기본 내장  
+6️⃣ 웹 접근성(WCAG, A11y)을 기본적으로 준수하는 컴포넌트/페이지 설계  
+7️⃣ 👉 `app/data + 스타일 토큰 + 필요 시 API`만 수정해도
 완전히 다른 사이트가 만들어지도록 설계
-8 추후 다국어 지원까지 고려하여 설계
-9 테마(라이트,다크모드)를 기본적으로 고려하여 설계
 
-이 규칙은 가이드가 아니라 **강력하고 엄격한 기준**이다.
+이 규칙은 강력한 가이드가 아니라 **엄격한 기준(헌법)**이다.
 
 ==============================================================
-개발 사고 순서
+🧠 개발 사고 순서
 
 레이아웃 → 페이지 → 컨테이너 → 블록/요소 → UI → 데이터 → SEO/AEO/GEO/A11y
 
 ==============================================================
-기술 스택
+🧰 기술 스택
 
 - Nuxt 3
-- Vue 3 + `<script setup lang="ts">`
-- TypeScript (엄격 모드 지향)
-- Pinia (Type 지원)
+- Vue 3 + `<script setup>`
+- JavaScript (엄격 모드 지향)
+- Pinia
 - SCSS + Design Token System
 - Backend: Java (Spring 등, REST `/api/...`)
 - SEO/AEO: Nuxt useHead/useSeoMeta, JSON-LD 구조화 데이터
 
 ==============================================================
-폴더 구조 (TS 기준)
+📂 폴더 구조 (TS 기준)
 
 자동 생성 / 수정 금지:
 
@@ -82,7 +81,7 @@ template
 │ │ └─ etc
 │ │ └─ terms.vue
 │ │
-│ ├─ data #UI/문구/접근성/SEO/GEO 데이터
+│ ├─ data # ⭐ UI/문구/접근성/SEO/GEO 데이터
 │ │ └─ mainData.json
 │ │
 │ ├─ assets
@@ -110,17 +109,16 @@ template
 ├─ config
 ├─ public
 ├─ stores
-├─ types #타입 정의 전용 폴더
 │
 ├─ .gitignore
 ├─ eslint.config.mjs
-├─ nuxt.config.ts
+├─ nuxt.config.js
 ├─ pnpm-lock.yaml
 ├─ README.md
 └─ tsconfig.json
 
 ==============================================================
-Data 설계 원칙 (SEO/AEO/GEO + A11y 포함)
+📌 Data 설계 원칙 (SEO/AEO/GEO + A11y 포함)
 
 UI 텍스트 / 이미지 경로 / 섹션 정보 / 접근성용 텍스트 / 메타 정보 등은  
 절대 페이지에 하드코딩하지 않는다.
@@ -142,86 +140,9 @@ UI 텍스트 / 이미지 경로 / 섹션 정보 / 접근성용 텍스트 / 메�
 - `alt`, `ariaLabel`, `ariaDescription`
 - `city`, `country`, `latitude`, `longitude`, `address`, `postalCode`, `businessHours`
 
-==============================================================
-Data + TypeScript 연동 (예시)
-
-`types/data.d.ts` 예시:
-
-export interface SiteInfo {
-title: string;
-metaDescription: string;
-metaKeywords?: string[];
-ogTitle?: string;
-ogDescription?: string;
-ogImage?: string;
-locale?: string; // 예: "ko_KR"
-}
-
-export interface GeoInfo {
-country: string;
-countryCode?: string; // 예: "KR"
-city?: string;
-address?: string;
-postalCode?: string;
-latitude?: number;
-longitude?: number;
-phone?: string;
-businessHours?: string;
-}
-
-export interface NavItem {
-label: string;
-to: string;
-ariaLabel?: string;
-}
-
-export interface Navigation {
-headerMenu: NavItem[];
-footerMenu?: NavItem[];
-}
-
-export interface HeroSection {
-title: string;
-subtitle: string;
-bannerImage: string;
-alt?: string;
-ariaLabel?: string;
-}
-
-export interface HomeSection {
-type: string;
-title: string;
-description?: string;
-ariaLabel?: string;
-}
-
-export interface FAQItem {
-question: string;
-answer: string;
-}
-
-export interface HomeData {
-hero: HeroSection;
-sections: HomeSection[];
-faqList?: FAQItem[];
-}
-
-export interface MainData {
-site: SiteInfo;
-navigation: Navigation;
-home: HomeData;
-geo?: GeoInfo;
-}
-
-페이지에서 사용하는 방법:
-
-import mainData from '~/app/data/mainData.json'
-import type { MainData } from '~/types/data'
-
-const data = mainData as MainData
 
 ==============================================================
-네이밍 규칙
+🧩 네이밍 규칙
 
 컴포넌트 파일명 (PascalCase):
 
@@ -243,7 +164,7 @@ CSS 클래스:
 - 스타일 용도의 id 사용 금지 (form label용 id/for는 허용)
 
 ==============================================================
-스타일 / 토큰 규칙
+🎨 스타일 / 토큰 규칙
 
 HEX / px 직접 사용 금지  
 항상 토큰 사용
@@ -273,14 +194,14 @@ SCSS import 순서:
 5. themes
 
 ==============================================================
-SEO / AEO / GEO / 웹 접근성(A11y) 상세 규칙 (중요)
+🔎 SEO / AEO / GEO / 웹 접근성(A11y) 상세 규칙 (중요)
 
 이 템플릿은 **SEO / AEO / GEO / A11y를 기본적으로 준수해야 한다.**  
 각 기능/페이지/컴포넌트를 설계할 때, 아래 규칙을 항상 고려한다.
 
 ---
 
-1 SEO (Search Engine Optimization)
+1️⃣ SEO (Search Engine Optimization)
 
 [구조 & 마크업]
 
@@ -317,7 +238,7 @@ ogImage: data.site.ogImage,
 
 ---
 
-2 AEO (Answer Engine Optimization)
+2️⃣ AEO (Answer Engine Optimization)
 
 AEO 목표: 검색/AI에서 “직접 답변” 형태로 노출되기 좋은 구조 만들기
 
@@ -329,13 +250,6 @@ AEO 목표: 검색/AI에서 “직접 답변” 형태로 노출되기 좋은 �
   - `<section>` + 적절한 heading(h2/h3)
   - 질문은 `<h3>` 또는 `<button>` (아코디언)으로, 답변은 `<p>` 또는 `<div>`로 표현
 
-[JSON-LD FAQ Schema]
-
-- 필요 시 data 기반으로 FAQPage JSON-LD 제공:
-  - `"@type": "FAQPage"`
-  - `"mainEntity"` 배열에 각 Q/A를 매핑
-- Json 내용 역시 data의 `question`, `answer`에서 가져온다.
-
 [직접 답변형 콘텐츠]
 
 - 주요 섹션 상단에는 “한 문장 요약/핵심 답변”을 `description` 등으로 data에 두고,
@@ -343,7 +257,7 @@ AEO 목표: 검색/AI에서 “직접 답변” 형태로 노출되기 좋은 �
 
 ---
 
-3 GEO (Geographic / Local SEO 최적화)
+3️⃣ GEO (Geographic / Local SEO 최적화)
 
 GEO 목표: 지역 기반 검색 / 로컬 비즈니스 검색에 유리한 구조
 
@@ -372,7 +286,7 @@ GEO 목표: 지역 기반 검색 / 로컬 비즈니스 검색에 유리한 구�
 
 ---
 
-4 웹 접근성 (A11y, WCAG) 준수 규칙
+4️⃣ 웹 접근성 (A11y, WCAG) 준수 규칙
 
 [시맨틱 & 역할]
 
@@ -416,39 +330,39 @@ class="cta-button"
 - 직접 색상값을 쓰지 않고 토큰화를 통해 나중에 전역적으로 보정 가능하게 한다.
 
 ==============================================================
-기능/페이지 개발 시 “답변 출력 형식” (Claude/Cursor가 반드시 따를 것)
+📐 기능/페이지 개발 시 “답변 출력 형식” (Claude/Cursor가 반드시 따를 것)
 
 어떤 기능/페이지/컴포넌트를 생성/수정할 때, 답변은 아래 형식을 따른다.
 
 1️⃣ 요구 요약  
 2️⃣ 구조 설계 트리 (레이아웃 → 페이지 → 컨테이너 → 요소)  
 3️⃣ 생성/수정 파일 목록 (상대 경로)  
-4️⃣ 코드 (TypeScript + SCSS + 토큰 사용)  
-5️⃣ 연결되는 data 구조 & 타입 정의 (mainData.json, types/\*.d.ts 예시 포함)  
+4️⃣ 코드 (JavaScript + SCSS + 토큰 사용)  
+5️⃣ 연결되는 data 구조
 6️⃣ SEO/AEO/GEO & A11y 관점에서 무엇을 어떻게 준수했는지 상세 설명  
 7️⃣ 어떤 data/토큰을 바꾸면 다른 사이트로 쉽게 커스터마이징 되는지 설명
 
 ==============================================================
-절대 금지
+🚫 금지
 
 - `.nuxt`, `.output`, `node_modules` 수정
 - inline style
 - HEX / px 직접 사용
+- 컴포넌트 파일 내 스타일 선언 금지, 스타일 내의 분류에 맞는 스타일시트에 선언
 - UI 텍스트/alt/aria를 코드에 직접 하드코딩
 - 타입 없는 any 남발
 - data 구조 무시하고 임의 문자열 삽입
 - SEO/AEO/GEO/A11y를 완전히 무시한 마크업/구조 제안
 
 ==============================================================
-반드시 유지될 철학
+🔥 반드시 유지될 철학
 
 구조 = 코드  
 내용 = data  
-안정성 = TypeScript  
 스타일 = token  
 상태 = store  
 비즈니스 = API  
 검색 친화 = SEO / AEO / GEO  
 모두를 위한 서비스 = 웹 접근성(A11y)
 
-이 원칙을 최우선으로 지킨다.
+👉 이 원칙을 최우선으로 지킨다.
