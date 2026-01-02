@@ -2,8 +2,8 @@
 alwaysApply: true
 ---
 
-너는 아주 숙련된 PM이자 프론트엔드 시니어 개발자다.
-이 프로젝트는 Nuxt 3 + TypeScript 기반 “범용 템플릿 프로젝트”이며,
+너는 아주 숙련된 프론트엔드 시니어 개발자다.
+이 프로젝트는 Nuxt 3 + JavaScript 기반 “범용 템플릿 프로젝트”이며,
 여러 고객사 웹사이트를 최소 수정으로 빠르게 제작하기 위해 만들어진 베이스 프로젝트이다.
 
 ==============================================================
@@ -12,7 +12,7 @@ alwaysApply: true
 1️⃣ 구조가 튼튼하고 재사용 가능한 템플릿 유지  
 2️⃣ 고객사 맞춤 커스터마이징을 “최소 수정”으로 빠르게 수행  
 3️⃣ 구조는 코드, 내용은 data, 스타일은 token으로 관리  
-4️⃣ TypeScript로 데이터 구조 안정성 보장  
+4️⃣ 간결한 JavaScript 코드로 웹최적화  
 5️⃣ SEO / AEO / GEO에 유리한 구조를 기본 내장  
 6️⃣ 웹 접근성(WCAG, A11y)을 기본적으로 준수하는 컴포넌트/페이지 설계  
 7️⃣ 👉 `app/data + 스타일 토큰 + 필요 시 API`만 수정해도
@@ -29,9 +29,9 @@ alwaysApply: true
 🧰 기술 스택
 
 - Nuxt 3
-- Vue 3 + `<script setup lang="ts">`
-- TypeScript (엄격 모드 지향)
-- Pinia (Type 지원)
+- Vue 3 + `<script setup>`
+- JavaScript (엄격 모드 지향)
+- Pinia
 - SCSS + Design Token System
 - Backend: Java (Spring 등, REST `/api/...`)
 - SEO/AEO: Nuxt useHead/useSeoMeta, JSON-LD 구조화 데이터
@@ -112,11 +112,10 @@ template
 ├─ config
 ├─ public
 ├─ stores
-├─ types # ⭐ 타입 정의 전용 폴더
 │
 ├─ .gitignore
 ├─ eslint.config.mjs
-├─ nuxt.config.ts
+├─ nuxt.config.js
 ├─ pnpm-lock.yaml
 ├─ README.md
 └─ tsconfig.json
@@ -144,83 +143,6 @@ UI 텍스트 / 이미지 경로 / 섹션 정보 / 접근성용 텍스트 / 메�
 - `alt`, `ariaLabel`, `ariaDescription`
 - `city`, `country`, `latitude`, `longitude`, `address`, `postalCode`, `businessHours`
 
-==============================================================
-📌 Data + TypeScript 연동 (예시)
-
-`types/data.d.ts` 예시:
-
-export interface SiteInfo {
-title: string;
-metaDescription: string;
-metaKeywords?: string[];
-ogTitle?: string;
-ogDescription?: string;
-ogImage?: string;
-locale?: string; // 예: "ko_KR"
-}
-
-export interface GeoInfo {
-country: string;
-countryCode?: string; // 예: "KR"
-city?: string;
-address?: string;
-postalCode?: string;
-latitude?: number;
-longitude?: number;
-phone?: string;
-businessHours?: string;
-}
-
-export interface NavItem {
-label: string;
-to: string;
-ariaLabel?: string;
-}
-
-export interface Navigation {
-headerMenu: NavItem[];
-footerMenu?: NavItem[];
-}
-
-export interface HeroSection {
-title: string;
-subtitle: string;
-bannerImage: string;
-alt?: string;
-ariaLabel?: string;
-}
-
-export interface HomeSection {
-type: string;
-title: string;
-description?: string;
-ariaLabel?: string;
-}
-
-export interface FAQItem {
-question: string;
-answer: string;
-}
-
-export interface HomeData {
-hero: HeroSection;
-sections: HomeSection[];
-faqList?: FAQItem[];
-}
-
-export interface MainData {
-site: SiteInfo;
-navigation: Navigation;
-home: HomeData;
-geo?: GeoInfo;
-}
-
-페이지에서 사용하는 방법:
-
-import mainData from '~/app/data/mainData.json'
-import type { MainData } from '~/types/data'
-
-const data = mainData as MainData
 
 ==============================================================
 🧩 네이밍 규칙
@@ -331,13 +253,6 @@ AEO 목표: 검색/AI에서 “직접 답변” 형태로 노출되기 좋은 �
   - `<section>` + 적절한 heading(h2/h3)
   - 질문은 `<h3>` 또는 `<button>` (아코디언)으로, 답변은 `<p>` 또는 `<div>`로 표현
 
-[JSON-LD FAQ Schema]
-
-- 필요 시 data 기반으로 FAQPage JSON-LD 제공:
-  - `"@type": "FAQPage"`
-  - `"mainEntity"` 배열에 각 Q/A를 매핑
-- Json 내용 역시 data의 `question`, `answer`에서 가져온다.
-
 [직접 답변형 콘텐츠]
 
 - 주요 섹션 상단에는 “한 문장 요약/핵심 답변”을 `description` 등으로 data에 두고,
@@ -425,8 +340,8 @@ class="cta-button"
 1️⃣ 요구 요약  
 2️⃣ 구조 설계 트리 (레이아웃 → 페이지 → 컨테이너 → 요소)  
 3️⃣ 생성/수정 파일 목록 (상대 경로)  
-4️⃣ 코드 (TypeScript + SCSS + 토큰 사용)  
-5️⃣ 연결되는 data 구조 & 타입 정의 (mainData.json, types/\*.d.ts 예시 포함)  
+4️⃣ 코드 (JavaScript + SCSS + 토큰 사용)  
+5️⃣ 연결되는 data 구조
 6️⃣ SEO/AEO/GEO & A11y 관점에서 무엇을 어떻게 준수했는지 상세 설명  
 7️⃣ 어떤 data/토큰을 바꾸면 다른 사이트로 쉽게 커스터마이징 되는지 설명
 
@@ -446,7 +361,6 @@ class="cta-button"
 
 구조 = 코드  
 내용 = data  
-안정성 = TypeScript  
 스타일 = token  
 상태 = store  
 비즈니스 = API  
