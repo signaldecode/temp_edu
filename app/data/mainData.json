@@ -65,12 +65,6 @@
           "to": "/courses",
           "ariaLabel": "전체 강의 목록 보기",
           "variant": "primary"
-        },
-        {
-          "label": "무료 체험하기",
-          "to": "/courses?trial=true",
-          "ariaLabel": "무료 체험 강의 신청",
-          "variant": "secondary"
         }
       ],
       "ariaLabel": "메인 배너 섹션"
@@ -205,7 +199,7 @@
       ]
     },
     "reviews": {
-      "_desc": "수강생 후기 섹션",
+      "_desc": "수강생 후기 섹션 (포토 후기)",
       "title": "수강생 후기",
       "subtitle": "실제 수강생들의 생생한 후기를 확인하세요",
       "ariaLabel": "수강생 후기 섹션",
@@ -214,25 +208,40 @@
           "id": "review-1",
           "nickname": "개발자지망생",
           "courseName": "Vue 3 완벽 가이드",
+          "title": "실무에 바로 적용할 수 있는 강의!",
           "content": "Vue 3의 Composition API를 제대로 이해할 수 있었습니다. 실무 예제가 많아서 바로 적용할 수 있었어요!",
+          "image": {
+            "src": "/images/reviews/review-1.jpg",
+            "alt": "Vue 3 강의 수강 후기 이미지"
+          },
           "rating": 5,
-          "ariaLabel": "개발자지망생님의 Vue 3 완벽 가이드 수강 후기, 별점 5점"
+          "ariaLabel": "개발자지망생님의 Vue 3 완벽 가이드 수강 후기"
         },
         {
           "id": "review-2",
           "nickname": "디자인초보",
           "courseName": "Figma 마스터 클래스",
+          "title": "디자인 시스템까지 완벽 이해!",
           "content": "Figma 기초부터 디자인 시스템까지! 포트폴리오 만드는 데 큰 도움이 됐습니다.",
+          "image": {
+            "src": "/images/reviews/review-2.jpg",
+            "alt": "Figma 강의 수강 후기 이미지"
+          },
           "rating": 5,
-          "ariaLabel": "디자인초보님의 Figma 마스터 클래스 수강 후기, 별점 5점"
+          "ariaLabel": "디자인초보님의 Figma 마스터 클래스 수강 후기"
         },
         {
           "id": "review-3",
           "nickname": "취준생A",
           "courseName": "Spring Boot 실전 프로젝트",
+          "title": "취업 준비에 정말 도움됐어요!",
           "content": "실제 서비스를 만들면서 배우니까 이해가 빨랐어요. 취업 준비에 정말 도움됐습니다!",
+          "image": {
+            "src": "/images/reviews/review-3.jpg",
+            "alt": "Spring Boot 강의 수강 후기 이미지"
+          },
           "rating": 4,
-          "ariaLabel": "취준생A님의 Spring Boot 실전 프로젝트 수강 후기, 별점 4점"
+          "ariaLabel": "취준생A님의 Spring Boot 실전 프로젝트 수강 후기"
         }
       ],
       "moreLink": {

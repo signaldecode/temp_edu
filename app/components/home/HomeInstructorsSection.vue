@@ -63,28 +63,3 @@ const handleModalClose = () => {
   </section>
 </template>
 
-<style lang="scss" scoped>
-@use '~/assets/styles/tokens/colors' as *;
-@use '~/assets/styles/tokens/typography' as *;
-@use '~/assets/styles/tokens/spacing' as *;
-
-.instructors-section {
-  background-color: $color-background;
-
-  &__list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $space-4;
-    list-style: none;
-
-    @media (min-width: $container-md) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: $card-gap-lg;
-    }
-  }
-
-  &__item {
-    // Grid item
-  }
-}
-</style>

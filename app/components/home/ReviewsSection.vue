@@ -1,5 +1,6 @@
 <script setup>
-import HomeReviewCard from '~/components/home/HomeReviewCard.vue'
+import PhotoReviewCard from '~/components/reviews/PhotoReviewCard.vue'
+import ReviewModal from '~/components/modal/ReviewModal.vue'
 
 const props = defineProps({
   data: {
@@ -7,6 +8,20 @@ const props = defineProps({
     required: true
   }
 })
+
+// 모달 상태
+const isModalOpen = ref(false)
+const selectedReview = ref(null)
+
+const handleReviewClick = (review) => {
+  selectedReview.value = review
+  isModalOpen.value = true
+}
+
+const handleModalClose = () => {
+  isModalOpen.value = false
+  selectedReview.value = null
+}
 </script>
 
 <template>
@@ -33,7 +48,10 @@ const props = defineProps({
           :key="review.id"
           class="reviews-section__item"
         >
-          <HomeReviewCard :review="review" />
+          <PhotoReviewCard
+            :review="review"
+            @click="handleReviewClick(review)"
+          />
         </li>
       </ul>
 
@@ -50,40 +68,13 @@ const props = defineProps({
         </NuxtLink>
       </div>
     </div>
+
+    <!-- 후기 상세 모달 -->
+    <ReviewModal
+      :review="selectedReview"
+      :is-open="isModalOpen"
+      @close="handleModalClose"
+    />
   </section>
 </template>
 
-<style lang="scss" scoped>
-@use '~/assets/styles/tokens/colors' as *;
-@use '~/assets/styles/tokens/typography' as *;
-@use '~/assets/styles/tokens/spacing' as *;
-
-.reviews-section {
-  background-color: $color-background-secondary;
-
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: $card-gap-lg;
-    list-style: none;
-
-    @media (min-width: $container-md) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (min-width: $container-lg) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  &__item {
-    // Grid item
-  }
-
-  &__more {
-    display: flex;
-    justify-content: center;
-    margin-top: $space-10;
-  }
-}
-</style>

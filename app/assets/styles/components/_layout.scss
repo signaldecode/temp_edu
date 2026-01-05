@@ -238,6 +238,8 @@
 
 // ===========================
 // App Logo
+// - 사이트 로고 텍스트 스타일
+// - 헤더/푸터에서 사용
 // ===========================
 
 .app-logo {
@@ -247,8 +249,10 @@
   font-size: $font-size-xl;
   font-weight: $font-weight-bold;
   color: $primary-600;
+  letter-spacing: -0.02em;
 
+  // 밝은 배경용 (푸터 등)
   &--light {
-    color: $neutral-0;
+    color: $neutral-100;
   }
 }

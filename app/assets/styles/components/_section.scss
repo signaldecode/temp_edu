@@ -230,23 +230,99 @@
 .section-badge {
   display: inline-flex;
   align-items: center;
-  padding: $space-1-5 $space-3;
+  gap: $space-2;
+  padding: $space-1-5 $space-4;
   font-size: $font-size-xs;
   font-weight: $font-weight-semibold;
-  color: $primary-700;
-  background-color: $primary-50;
-  border-radius: $radius-full;
+  color: $primary-600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: $letter-spacing-wide;
+  background-color: transparent;
+  border: 1px solid $primary-300;
+  border-radius: $radius-full;
 
-  @media (min-width: $container-md) {
-    padding: $space-2 $space-4;
-    font-size: $font-size-sm;
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: $primary-500;
+    border-radius: $radius-full;
+  }
+
+  &--default {
+    // default styles already applied
   }
 
   &--light {
+    color: $primary-200;
+    border-color: rgba($neutral-0, 0.3);
+
+    &::before {
+      background-color: $primary-300;
+    }
+  }
+}
+
+// ===========================
+// Contact Section
+// ===========================
+
+.contact-section {
+  padding: $section-padding-y 0;
+  background-color: $neutral-900;
+
+  &__container {
+    max-width: $container-xl;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+
+    @media (min-width: $container-md) {
+      padding: 0 $container-padding-md;
+    }
+
+    @media (min-width: $container-lg) {
+      padding: 0 $container-padding-lg;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $space-10;
+  }
+
+  &__title {
+    margin-top: $space-3;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
     color: $neutral-0;
-    background-color: rgba($neutral-0, 0.15);
+
+    @media (min-width: $container-md) {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  &__description {
+    margin-top: $space-3;
+    font-size: $font-size-base;
+    color: $neutral-400;
+    line-height: $line-height-relaxed;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-4;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @media (min-width: $container-md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    display: flex;
   }
 }
 

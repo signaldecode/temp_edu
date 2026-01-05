@@ -15,22 +15,3 @@ const props = defineProps({
     EduTech
   </span>
 </template>
-
-<style lang="scss" scoped>
-@use '~/assets/styles/tokens/colors' as *;
-@use '~/assets/styles/tokens/typography' as *;
-
-.app-logo {
-  font-size: $font-size-xl;
-  font-weight: $font-weight-bold;
-  letter-spacing: -0.02em;
-
-  &--default {
-    color: $primary-600;
-  }
-
-  &--light {
-    color: $neutral-100;
-  }
-}
-</style>

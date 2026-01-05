@@ -6,7 +6,6 @@
  * - .review-card: 리뷰 카드
  * - .photo-review-card: 포토 리뷰 카드
  * - .instructor-card: 강사 카드
- * - .value-card: 핵심가치 카드
  * - .stat-card: 통계 카드
  * - .contact-card: 연락처 카드
  */
@@ -659,90 +658,6 @@
   }
 }
 
-// ===========================
-// Value Card
-// ===========================
-
-.value-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  padding: $card-padding-lg;
-  text-align: center;
-  background-color: $color-surface;
-  border: 1px solid $color-border-light;
-  border-radius: $radius-xl;
-  transition: border-color $transition-base, box-shadow $transition-base, transform $transition-base;
-
-  &:hover {
-    border-color: $primary-300;
-    box-shadow: 0 8px 24px rgba($primary-500, 0.12);
-    transform: translateY(-4px);
-
-    .value-card__icon {
-      background-color: $primary-500;
-
-      img {
-        filter: brightness(0) invert(1);
-      }
-    }
-
-    .value-card__title {
-      color: $primary-600;
-    }
-  }
-
-  &__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 64px;
-    height: 64px;
-    margin-bottom: $space-3;
-    background-color: $primary-50;
-    border-radius: $radius-xl;
-    flex-shrink: 0;
-    transition: background-color $transition-base;
-
-    img {
-      width: 32px;
-      height: 32px;
-      object-fit: contain;
-      transition: filter $transition-base;
-    }
-  }
-
-  &__title {
-    margin-bottom: $space-2;
-    font-size: $font-size-base;
-    font-weight: $font-weight-semibold;
-    color: $color-text-primary;
-    flex-shrink: 0;
-    transition: color $transition-base;
-
-    @media (min-width: $container-md) {
-      font-size: $font-size-lg;
-    }
-  }
-
-  &__description {
-    font-size: $font-size-xs;
-    color: $color-text-secondary;
-    line-height: $line-height-relaxed;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    @media (min-width: $container-md) {
-      font-size: $font-size-sm;
-    }
-  }
-}
 
 // ===========================
 // Stat Card
@@ -783,68 +698,112 @@
 }
 
 // ===========================
-// Contact Card
+// Contact Card (Dark theme)
 // ===========================
 
 .contact-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: $space-6;
+  flex: 1;
+  min-height: 200px;
+  padding: $space-5 $space-4;
   text-align: center;
-  background-color: $color-surface;
-  border: 1px solid $color-border-light;
+  background-color: $neutral-800;
   border-radius: $radius-xl;
-  transition: border-color $transition-base, box-shadow $transition-base;
+  transition: background-color $transition-base, transform $transition-base;
 
   @media (min-width: $container-md) {
-    padding: $space-8;
+    min-height: 240px;
+    padding: $space-8 $card-padding-lg;
   }
 
   &:hover {
-    border-color: $primary-200;
-    box-shadow: 0 8px 24px rgba($primary-500, 0.08);
+    background-color: $neutral-700;
+    transform: translateY(-4px);
   }
 
   &__icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
-    margin-bottom: $space-4;
-    background-color: $primary-50;
+    width: 48px;
+    height: 48px;
+    margin-bottom: $space-3;
+    background-color: rgba($neutral-0, 0.1);
     border-radius: $radius-full;
-    color: $primary-600;
+    flex-shrink: 0;
 
     @media (min-width: $container-md) {
-      width: 64px;
-      height: 64px;
+      width: 56px;
+      height: 56px;
+      margin-bottom: $space-4;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+
+      @media (min-width: $container-md) {
+        width: 28px;
+        height: 28px;
+      }
     }
   }
 
   &__title {
+    margin-bottom: $space-1-5;
     font-size: $font-size-sm;
-    font-weight: $font-weight-medium;
-    color: $color-text-tertiary;
-    margin-bottom: $space-2;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  &__value {
-    font-size: $font-size-base;
     font-weight: $font-weight-semibold;
-    color: $color-text-primary;
-    margin-bottom: $space-4;
-    word-break: break-all;
+    color: $neutral-0;
 
     @media (min-width: $container-md) {
+      margin-bottom: $space-2;
       font-size: $font-size-lg;
     }
   }
 
-  &__link {
-    width: 100%;
+  &__value {
+    flex: 1;
+    margin-bottom: $space-3;
+    font-size: $font-size-xs;
+    color: $neutral-400;
+    line-height: $line-height-relaxed;
+    word-break: break-all;
+
+    @media (min-width: $container-md) {
+      margin-bottom: $space-4;
+      font-size: $font-size-sm;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $space-2 $space-4;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    color: $neutral-0;
+    background-color: rgba($neutral-0, 0.15);
+    border-radius: $radius-lg;
+    text-decoration: none;
+    transition: background-color $transition-fast;
+    flex-shrink: 0;
+
+    @media (min-width: $container-md) {
+      padding: $space-2-5 $space-5;
+      font-size: $font-size-sm;
+    }
+
+    &:hover {
+      background-color: rgba($neutral-0, 0.25);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $neutral-0;
+      outline-offset: 2px;
+    }
   }
 }
