@@ -103,6 +103,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:math';
 @use '~/assets/styles/tokens/colors' as *;
 @use '~/assets/styles/tokens/typography' as *;
 @use '~/assets/styles/tokens/spacing' as *;
@@ -258,16 +259,16 @@ onMounted(() => {
     height: 4px;
     background: rgba($primary-300, 0.6);
     border-radius: 50%;
-    left: calc(random(100) * 1%);
+    left: calc(math.random(100) * 1%);
     animation: particle-float calc(15s + var(--i) * 0.5s) linear infinite;
     animation-delay: calc(var(--i) * -0.75s);
 
     @for $i from 1 through 20 {
       &:nth-child(#{$i}) {
-        left: #{random(100)}%;
-        width: #{2 + random(4)}px;
-        height: #{2 + random(4)}px;
-        opacity: #{0.3 + random(5) * 0.1};
+        left: #{math.random(100)}%;
+        width: #{2 + math.random(4)}px;
+        height: #{2 + math.random(4)}px;
+        opacity: #{0.3 + math.random(5) * 0.1};
       }
     }
   }

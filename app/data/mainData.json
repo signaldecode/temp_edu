@@ -30,7 +30,7 @@
       { "label": "강의", "to": "/courses", "ariaLabel": "강의 목록으로 이동" },
       { "label": "후기", "to": "/reviews", "ariaLabel": "수강생 후기로 이동" },
       { "label": "FAQ", "to": "/faq", "ariaLabel": "자주 묻는 질문으로 이동" },
-      { "label": "문의", "to": "/contact", "ariaLabel": "문의하기로 이동" }
+      { "label": "수강문의", "to": "/contact", "ariaLabel": "수강문의하기로 이동" }
     ],
     "footerMenu": [
       { "label": "이용약관", "to": "/terms", "ariaLabel": "이용약관 보기" },

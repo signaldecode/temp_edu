@@ -2,7 +2,7 @@
 import mainData from '~/data/mainData.json'
 import HeroSection from '~/components/home/HeroSection.vue'
 import CoursesSection from '~/components/home/CoursesSection.vue'
-import InstructorsSection from '~/components/home/InstructorsSection.vue'
+import HomeInstructorsSection from '~/components/home/HomeInstructorsSection.vue'
 import ReviewsSection from '~/components/home/ReviewsSection.vue'
 import PartnersSection from '~/components/common/PartnersSection.vue'
 import FaqSection from '~/components/home/FaqSection.vue'
@@ -39,7 +39,7 @@ useHead({
     <h1 class="visually-hidden">{{ data.site.title }}</h1>
     <HeroSection :data="data.home.hero" />
     <CoursesSection :data="data.home.courses" :categories="categories" />
-    <InstructorsSection :data="data.home.instructors" />
+    <HomeInstructorsSection :data="data.home.instructors" />
     <ReviewsSection :data="data.home.reviews" />
     <PartnersSection :data="data.home.partners" variant="brand" />
     <FaqSection :data="data.home.faq" />

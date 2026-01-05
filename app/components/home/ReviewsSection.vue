@@ -1,5 +1,5 @@
 <script setup>
-import ReviewCard from '~/components/home/ReviewCard.vue'
+import HomeReviewCard from '~/components/home/HomeReviewCard.vue'
 
 const props = defineProps({
   data: {
@@ -33,7 +33,7 @@ const props = defineProps({
           :key="review.id"
           class="reviews-section__item"
         >
-          <ReviewCard :review="review" />
+          <HomeReviewCard :review="review" />
         </li>
       </ul>
 
