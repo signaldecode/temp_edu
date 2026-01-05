@@ -5,6 +5,10 @@ const props = defineProps({
   data: {
     type: Object,
     required: true
+  },
+  categories: {
+    type: Array,
+    required: true
   }
 })
 
@@ -45,7 +49,7 @@ const handleCategoryChange = (categoryId) => {
       <nav class="courses-section__categories" aria-label="강좌 카테고리">
         <ul class="courses-section__category-list">
           <li
-            v-for="category in props.data.categories"
+            v-for="category in props.categories"
             :key="category.id"
           >
             <button

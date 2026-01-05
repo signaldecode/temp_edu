@@ -1,8 +1,11 @@
 <script setup>
+import mainData from '~/data/mainData.json'
 import reviewsData from '~/data/reviewsData.json'
 import ReviewsHeroSection from '~/components/reviews/ReviewsHeroSection.vue'
 import PhotoReviewsSection from '~/components/reviews/PhotoReviewsSection.vue'
 import MoreReviewsSection from '~/components/reviews/MoreReviewsSection.vue'
+
+const categories = mainData.categories.list
 
 definePageMeta({
   layout: 'default'
@@ -24,7 +27,7 @@ useHead({
   <main class="reviews-page">
     <ReviewsHeroSection :data="reviewsData.hero" />
     <PhotoReviewsSection :data="reviewsData.photoReviews" />
-    <MoreReviewsSection :data="reviewsData.moreReviews" />
+    <MoreReviewsSection :data="reviewsData.moreReviews" :categories="categories" />
   </main>
 </template>
 

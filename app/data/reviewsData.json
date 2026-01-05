@@ -98,16 +98,10 @@
     ]
   },
   "moreReviews": {
+    "_desc": "categories는 mainData.json의 공통 정의 사용",
     "title": "더 많은 후기 보기",
     "description": "카테고리별로 다양한 수강 후기를 확인해보세요",
     "ariaLabel": "더 많은 후기 섹션",
-    "categories": [
-      { "id": "all", "label": "전체", "ariaLabel": "전체 후기 보기" },
-      { "id": "design", "label": "디자인", "ariaLabel": "디자인 카테고리 후기 보기" },
-      { "id": "frontend", "label": "프론트엔드", "ariaLabel": "프론트엔드 카테고리 후기 보기" },
-      { "id": "backend", "label": "백엔드", "ariaLabel": "백엔드 카테고리 후기 보기" },
-      { "id": "data", "label": "데이터", "ariaLabel": "데이터 카테고리 후기 보기" }
-    ],
     "list": [
       {
         "id": "review-1",

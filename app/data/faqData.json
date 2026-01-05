@@ -1,21 +1,21 @@
 {
   "meta": {
-    "title": "강의 Q&A | 에듀테크 아카데미",
+    "title": "강의 FAQ | 에듀테크 아카데미",
     "description": "에듀테크 아카데미 강의에 대한 질문과 답변을 확인하세요.",
-    "ogTitle": "강의 Q&A | 에듀테크 아카데미",
+    "ogTitle": "강의 FAQ | 에듀테크 아카데미",
     "ogDescription": "수강생들의 질문과 강사님의 답변을 확인해보세요."
   },
   "hero": {
-    "badge": "Q&A",
-    "title": "강의 Q&A",
+    "badge": "FAQ",
+    "title": "강의 FAQ",
     "description": "강의에 대해 궁금한 점을 질문하고, 다른 수강생들의 질문과 답변도 확인해보세요.",
-    "ariaLabel": "강의 Q&A 페이지 소개"
+    "ariaLabel": "강의 FAQ 페이지 소개"
   },
   "filter": {
     "searchPlaceholder": "질문 키워드 검색",
-    "searchAriaLabel": "Q&A 키워드 검색",
+    "searchAriaLabel": "FAQ 키워드 검색",
     "categories": [
-      { "id": "all", "label": "전체", "ariaLabel": "전체 Q&A 보기" },
+      { "id": "all", "label": "전체", "ariaLabel": "전체 FAQ 보기" },
       { "id": "figma-master", "label": "Figma 마스터 클래스", "ariaLabel": "Figma 마스터 클래스 Q&A 보기" },
       { "id": "react-guide", "label": "React 완벽 가이드", "ariaLabel": "React 완벽 가이드 Q&A 보기" },
       { "id": "python-data", "label": "Python 데이터 분석", "ariaLabel": "Python 데이터 분석 Q&A 보기" },

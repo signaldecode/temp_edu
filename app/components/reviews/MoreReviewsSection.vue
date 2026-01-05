@@ -6,6 +6,10 @@ const props = defineProps({
   data: {
     type: Object,
     required: true
+  },
+  categories: {
+    type: Array,
+    required: true
   }
 })
 
@@ -53,7 +57,7 @@ const handleModalClose = () => {
       <nav class="more-reviews__tabs" aria-label="후기 카테고리">
         <ul class="more-reviews__tab-list" role="tablist">
           <li
-            v-for="category in data.categories"
+            v-for="category in categories"
             :key="category.id"
             role="presentation"
           >

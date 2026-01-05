@@ -1,5 +1,18 @@
 {
-  "site": { 
+  "categories": {
+    "_desc": "공통 카테고리 정의 - 강의, 후기 등에서 공유",
+    "list": [
+      { "id": "all", "label": "전체", "ariaLabel": "전체 강좌 보기" },
+      { "id": "planning", "label": "기획", "ariaLabel": "기획 강좌 보기" },
+      { "id": "design", "label": "디자인", "ariaLabel": "디자인 강좌 보기" },
+      { "id": "frontend", "label": "프론트엔드", "ariaLabel": "프론트엔드 강좌 보기" },
+      { "id": "backend", "label": "백엔드", "ariaLabel": "백엔드 강좌 보기" },
+      { "id": "ai", "label": "AI", "ariaLabel": "AI 강좌 보기" },
+      { "id": "blockchain", "label": "블록체인", "ariaLabel": "블록체인 강좌 보기" },
+      { "id": "data", "label": "데이터", "ariaLabel": "데이터 강좌 보기" }
+    ]
+  },
+  "site": {
     "_desc": "사이트 기본 정보",
     "title": "에듀테크 아카데미",
     "metaDescription": "실무 중심의 온라인 강의 플랫폼. 디자인, 프론트엔드, 백엔드, AI 분야의 전문 강좌를 만나보세요.",
@@ -16,7 +29,7 @@
       { "label": "클래스", "to": "/about", "ariaLabel": "클래스 소개 페이지로 이동" },
       { "label": "강의", "to": "/courses", "ariaLabel": "강의 목록으로 이동" },
       { "label": "후기", "to": "/reviews", "ariaLabel": "수강생 후기로 이동" },
-      { "label": "Q&A", "to": "/qna", "ariaLabel": "자주 묻는 질문으로 이동" },
+      { "label": "FAQ", "to": "/faq", "ariaLabel": "자주 묻는 질문으로 이동" },
       { "label": "문의", "to": "/contact", "ariaLabel": "문의하기로 이동" }
     ],
     "footerMenu": [
@@ -63,17 +76,10 @@
       "ariaLabel": "메인 배너 섹션"
     },
     "courses": {
-      "_desc": "카테고리 별 카드 섹션",
+      "_desc": "카테고리 별 카드 섹션 - categories는 공통 정의 사용",
       "title": "분야별 강좌",
       "subtitle": "관심 분야를 선택하고 원하는 강좌를 찾아보세요",
       "ariaLabel": "분야별 강좌 섹션",
-      "categories": [
-        { "id": "all", "label": "전체", "ariaLabel": "전체 강좌 보기" },
-        { "id": "design", "label": "디자인", "ariaLabel": "디자인 강좌 보기" },
-        { "id": "frontend", "label": "프론트엔드", "ariaLabel": "프론트엔드 강좌 보기" },
-        { "id": "backend", "label": "백엔드", "ariaLabel": "백엔드 강좌 보기" },
-        { "id": "ai", "label": "AI", "ariaLabel": "AI 강좌 보기" }
-      ],
       "courses": [
         {
           "id": "course-1",
@@ -292,7 +298,7 @@
       ]
     },
     "faq": {
-      "_desc": "Q&A 자주 묻는 질문 섹션",
+      "_desc": "FAQ 자주 묻는 질문 섹션",
       "title": "자주 묻는 질문",
       "subtitle": "궁금한 점이 있으신가요?",
       "ariaLabel": "자주 묻는 질문 섹션",
@@ -325,8 +331,8 @@
       ],
       "moreLink": {
         "label": "더 많은 질문 보기",
-        "to": "/qna",
-        "ariaLabel": "전체 Q&A 페이지로 이동"
+        "to": "/faq",
+        "ariaLabel": "전체 FAQ 페이지로 이동"
       }
     },
     "contact": {
@@ -526,7 +532,7 @@
     }
   },
   "coursesPage": {
-    "_desc": "강의 페이지",
+    "_desc": "강의 페이지 - categories는 공통 정의 사용",
     "meta": {
       "title": "강의 목록 | 에듀테크 아카데미",
       "description": "실무 중심의 다양한 IT 강의를 만나보세요. 기획, 디자인, 프론트엔드, 백엔드, AI, 블록체인, 데이터 분야의 전문 강좌."
@@ -540,16 +546,6 @@
       },
       "ariaLabel": "강의 페이지 히어로 섹션"
     },
-    "categories": [
-      { "id": "all", "label": "전체", "ariaLabel": "전체 강좌 보기" },
-      { "id": "planning", "label": "기획", "ariaLabel": "기획 강좌 보기" },
-      { "id": "design", "label": "디자인", "ariaLabel": "디자인 강좌 보기" },
-      { "id": "frontend", "label": "프론트엔드", "ariaLabel": "프론트엔드 강좌 보기" },
-      { "id": "backend", "label": "백엔드", "ariaLabel": "백엔드 강좌 보기" },
-      { "id": "ai", "label": "AI", "ariaLabel": "AI 강좌 보기" },
-      { "id": "blockchain", "label": "블록체인", "ariaLabel": "블록체인 강좌 보기" },
-      { "id": "data", "label": "데이터", "ariaLabel": "데이터 강좌 보기" }
-    ],
     "courseList": [
       {
         "id": "course-1",

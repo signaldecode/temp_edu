@@ -1,0 +1,139 @@
+/**
+ * About Page Styles
+ * - 클래스 소개 페이지 전용 스타일
+ * - .core-values: 핵심가치 섹션
+ * - .value-card: 핵심가치 카드 (플립 효과)
+ */
+
+@use '../tokens/colors' as *;
+@use '../tokens/typography' as *;
+@use '../tokens/spacing' as *;
+
+// ===========================
+// Core Values Section
+// ===========================
+
+.core-values {
+  padding: $section-padding-y 0;
+  background: linear-gradient(135deg, $neutral-900 0%, $neutral-800 100%);
+
+  @media (min-width: $container-lg) {
+    padding: $section-padding-y-lg 0;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-3;
+    margin-bottom: $space-12;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $neutral-0;
+
+    @media (min-width: $container-md) {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-3;
+    list-style: none;
+
+    @media (min-width: $container-sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $container-lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $space-4;
+    }
+  }
+
+  &__item {
+    display: flex;
+  }
+}
+
+// ===========================
+// Value Card
+// ===========================
+
+.value-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-4;
+  width: 100%;
+  padding: $space-6;
+  background: transparent;
+  border-radius: $radius-xl;
+  border: 1px solid rgba($neutral-0, 0.15);
+  transition: background 0.2s ease, border-color 0.2s ease;
+
+  @media (min-width: $container-md) {
+    gap: $space-5;
+    padding: $space-8;
+  }
+
+  &:hover {
+    border-color: rgba($primary-400, 0.3);
+    background: rgba($neutral-0, 0.05);  
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    background: transparent !important;
+    color: $neutral-0;
+
+    @media (min-width: $container-md) {
+      width: 80px;
+      height: 80px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-3;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: $font-weight-bold;
+    color: $neutral-0;
+
+    @media (min-width: $container-md) {
+      font-size: 26px;
+    }
+  }
+
+  &__description {
+    font-size: $font-size-sm;
+    color: $neutral-400;
+    line-height: $line-height-relaxed;
+
+    @media (min-width: $container-md) {
+      font-size: $font-size-base;
+    }
+  }
+}

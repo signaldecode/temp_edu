@@ -155,6 +155,7 @@
     gap: $space-6;
     width: max-content;
     animation: slide 30s linear infinite;
+    padding: $space-4;
 
     &:hover {
       animation-play-state: paused;

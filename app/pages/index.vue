@@ -8,6 +8,7 @@ import PartnersSection from '~/components/common/PartnersSection.vue'
 import FaqSection from '~/components/home/FaqSection.vue'
 
 const data = mainData
+const categories = mainData.categories.list
 
 definePageMeta({
   layout: 'default',
@@ -37,7 +38,7 @@ useHead({
   <main class="page-home">
     <h1 class="visually-hidden">{{ data.site.title }}</h1>
     <HeroSection :data="data.home.hero" />
-    <CoursesSection :data="data.home.courses" />
+    <CoursesSection :data="data.home.courses" :categories="categories" />
     <InstructorsSection :data="data.home.instructors" />
     <ReviewsSection :data="data.home.reviews" />
     <PartnersSection :data="data.home.partners" variant="brand" />

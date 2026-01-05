@@ -1,7 +1,7 @@
 <script setup>
-import qnaData from '~/data/qnaData.json'
-import QnaHeroSection from '~/components/qna/QnaHeroSection.vue'
-import QnaListSection from '~/components/qna/QnaListSection.vue'
+import qnaData from '~/data/faqData.json'
+import QnaHeroSection from '~/components/faq/QnaHeroSection.vue'
+import QnaListSection from '~/components/faq/QnaListSection.vue'
 
 definePageMeta({
   layout: 'default'

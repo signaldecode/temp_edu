@@ -176,7 +176,10 @@
   height: 280px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform $transition-base, box-shadow $transition-base;
+  background-color: $color-surface;
+  border: 1px solid $neutral-300;
+  border-radius: $radius-xl;
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
 
   @media (min-width: $container-md) {
     height: 300px;
@@ -352,7 +355,10 @@
   width: 100%;
   overflow: hidden;
   cursor: pointer;
-  transition: transform $transition-base, box-shadow $transition-base;
+  background-color: $color-surface;
+  border: 1px solid $neutral-300;
+  border-radius: $radius-xl;
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
 
   &:hover {
     transform: translateY(-4px);

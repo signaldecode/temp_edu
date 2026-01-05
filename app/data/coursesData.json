@@ -1,5 +1,5 @@
 {
-  "_desc": "강의 페이지 및 강의 상세 데이터",
+  "_desc": "강의 페이지 및 강의 상세 데이터 - categories는 mainData.json의 공통 정의 사용",
   "meta": {
     "title": "강의 목록 | 에듀테크 아카데미",
     "description": "실무 중심의 다양한 IT 강의를 만나보세요. 기획, 디자인, 프론트엔드, 백엔드, AI, 블록체인, 데이터 분야의 전문 강좌."
@@ -13,16 +13,6 @@
     },
     "ariaLabel": "강의 페이지 히어로 섹션"
   },
-  "categories": [
-    { "id": "all", "label": "전체", "ariaLabel": "전체 강좌 보기" },
-    { "id": "planning", "label": "기획", "ariaLabel": "기획 강좌 보기" },
-    { "id": "design", "label": "디자인", "ariaLabel": "디자인 강좌 보기" },
-    { "id": "frontend", "label": "프론트엔드", "ariaLabel": "프론트엔드 강좌 보기" },
-    { "id": "backend", "label": "백엔드", "ariaLabel": "백엔드 강좌 보기" },
-    { "id": "ai", "label": "AI", "ariaLabel": "AI 강좌 보기" },
-    { "id": "blockchain", "label": "블록체인", "ariaLabel": "블록체인 강좌 보기" },
-    { "id": "data", "label": "데이터", "ariaLabel": "데이터 강좌 보기" }
-  ],
   "courses": [
     {
       "id": "figma-master",
