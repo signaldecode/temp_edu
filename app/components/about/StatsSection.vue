@@ -68,9 +68,14 @@ defineProps({
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: $card-gap;
+    grid-template-columns: 1fr;
+    gap: $space-3;
     list-style: none;
+
+    @media (min-width: 360px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $card-gap;
+    }
 
     @media (min-width: $container-md) {
       grid-template-columns: repeat(4, 1fr);

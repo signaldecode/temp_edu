@@ -60,49 +60,84 @@ const filledStars = computed(() => Math.round(props.review.rating))
 @use '~/assets/styles/tokens/spacing' as *;
 
 .review-card {
-  padding: $card-padding-lg;
+  padding: $space-4;
+
+  @media (min-width: 360px) {
+    padding: $card-padding-lg;
+  }
 
   &__header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: $space-3;
     margin-bottom: $space-4;
+
+    @media (min-width: 360px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: $space-2;
+    }
   }
 
   &__user {
     display: flex;
     align-items: center;
-    gap: $space-3;
+    gap: $space-2;
+    min-width: 0;
+
+    @media (min-width: 360px) {
+      gap: $space-3;
+    }
   }
 
   &__avatar {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    font-size: $font-size-lg;
+    width: 36px;
+    height: 36px;
+    font-size: $font-size-base;
     font-weight: $font-weight-semibold;
     color: $primary-700;
     background-color: $primary-100;
     border-radius: $radius-full;
+    flex-shrink: 0;
+
+    @media (min-width: 360px) {
+      width: 44px;
+      height: 44px;
+      font-size: $font-size-lg;
+    }
   }
 
   &__user-info {
     display: flex;
     flex-direction: column;
     gap: $space-0-5;
+    min-width: 0;
   }
 
   &__nickname {
-    font-size: $font-size-base;
+    font-size: $font-size-sm;
     font-weight: $font-weight-semibold;
     color: $color-text-primary;
+
+    @media (min-width: 360px) {
+      font-size: $font-size-base;
+    }
   }
 
   &__course {
-    font-size: $font-size-sm;
+    font-size: $font-size-xs;
     color: $color-text-secondary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media (min-width: 360px) {
+      font-size: $font-size-sm;
+    }
   }
 
   &__rating {

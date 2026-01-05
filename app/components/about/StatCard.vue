@@ -75,13 +75,17 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  padding: $card-padding-lg;
+  padding: $space-5 $space-4;
   text-align: center;
   background-color: $color-surface;
-  border: 1px solid $color-border-light;
+  border: 1px solid $neutral-300;
   border-radius: $radius-xl;
   transition: border-color $transition-base, box-shadow $transition-base, transform $transition-base;
+
+  @media (min-width: 360px) {
+    aspect-ratio: 1 / 1;
+    padding: $card-padding-lg;
+  }
 
   &:hover {
     border-color: $primary-300;
