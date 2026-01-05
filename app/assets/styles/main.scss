@@ -18,19 +18,12 @@
 // ===========================
 // 3. Components
 // ===========================
-
-// UI Components
-@use 'components/button';
-@use 'components/form';
-@use 'components/code-block';
-
-// Layout Components
 @use 'components/layout';
-@use 'components/section';
-@use 'components/hero';
-
-// Content Components
+@use 'components/button';
 @use 'components/card';
+@use 'components/form';
+@use 'components/hero';
+@use 'components/section';
 @use 'components/accordion';
 @use 'components/modal';
 @use 'components/partners';
