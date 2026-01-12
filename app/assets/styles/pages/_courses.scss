@@ -200,9 +200,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: $space-3;
+    gap: $space-4;
     margin-bottom: $space-12;
     text-align: center;
+
+    @media (min-width: $container-md) {
+      gap: $space-5;
+    }
   }
 
   .instructors-section__title {
@@ -211,15 +215,17 @@
     font-size: $font-size-2xl;
     font-weight: $font-weight-bold;
     color: $color-text-primary;
+    padding-bottom: $space-3;
 
     @media (min-width: $container-md) {
       font-size: $font-size-3xl;
+      padding-bottom: $space-4;
     }
 
     &::after {
       content: '';
       position: absolute;
-      bottom: -$space-2;
+      bottom: 0;
       left: 50%;
       transform: translateX(-50%);
       width: 48px;
@@ -230,7 +236,6 @@
   }
 
   .instructors-section__description {
-    margin-top: $space-4;
     font-size: $font-size-base;
     color: $color-text-secondary;
     line-height: $line-height-relaxed;

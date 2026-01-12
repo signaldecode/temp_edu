@@ -50,8 +50,19 @@
     "email": "contact@edutech.example.com",
     "businessHours": "평일 09:00 - 18:00"
   },
+  "partners": {
+    "_desc": "파트너사 정보 - 여러 페이지에서 공유",
+    "list": [
+      { "id": "partner-1", "name": "테크스타트", "logo": { "src": "/images/partners/techstart.png", "alt": "테크스타트 로고" } },
+      { "id": "partner-2", "name": "디자인랩", "logo": { "src": "/images/partners/designlab.png", "alt": "디자인랩 로고" } },
+      { "id": "partner-3", "name": "코드팩토리", "logo": { "src": "/images/partners/codefactory.png", "alt": "코드팩토리 로고" } },
+      { "id": "partner-4", "name": "AI솔루션", "logo": { "src": "/images/partners/aisolution.png", "alt": "AI솔루션 로고" } },
+      { "id": "partner-5", "name": "클라우드원", "logo": { "src": "/images/partners/cloudone.png", "alt": "클라우드원 로고" } },
+      { "id": "partner-6", "name": "데이터브릿지", "logo": { "src": "/images/partners/databridge.png", "alt": "데이터브릿지 로고" } }
+    ]
+  },
   "home": {
-    "_desc": "홈 페이지 메인 섹션",
+    "_desc": "홈 페이지 섹션 설정 - 실제 데이터는 마스터 데이터 파일 참조",
     "hero": {
       "title": "실무에서 바로 쓰는\n진짜 개발 교육",
       "subtitle": "현직 전문가에게 배우는 실무 중심 커리큘럼으로 당신의 커리어를 한 단계 업그레이드하세요.",
@@ -70,68 +81,11 @@
       "ariaLabel": "메인 배너 섹션"
     },
     "courses": {
-      "_desc": "카테고리 별 카드 섹션 - categories는 공통 정의 사용",
+      "_desc": "메인 페이지 강의 섹션 설정 - 표시할 강의 ID 목록",
       "title": "분야별 강좌",
       "subtitle": "관심 분야를 선택하고 원하는 강좌를 찾아보세요",
       "ariaLabel": "분야별 강좌 섹션",
-      "courses": [
-        {
-          "id": "course-1",
-          "title": "Figma 마스터 클래스",
-          "description": "컴포넌트, 오토레이아웃, 프로토타이핑까지 실무에서 바로 쓰는 Figma 완벽 정복",
-          "category": "design",
-          "tags": ["UI/UX", "Figma", "실무"],
-          "thumbnail": {
-            "src": "/images/courses/figma.jpg",
-            "alt": "Figma 마스터 클래스 강좌 썸네일"
-          },
-          "instructor": "김디자인",
-          "link": "/courses/figma-master",
-          "ariaLabel": "Figma 마스터 클래스 강좌 상세 보기"
-        },
-        {
-          "id": "course-2",
-          "title": "Vue 3 완벽 가이드",
-          "description": "Composition API와 TypeScript로 구현하는 현대적인 Vue 애플리케이션 개발",
-          "category": "frontend",
-          "tags": ["Vue", "TypeScript", "Composition API"],
-          "thumbnail": {
-            "src": "/images/courses/vue3.jpg",
-            "alt": "Vue 3 완벽 가이드 강좌 썸네일"
-          },
-          "instructor": "이프론트",
-          "link": "/courses/vue3-guide",
-          "ariaLabel": "Vue 3 완벽 가이드 강좌 상세 보기"
-        },
-        {
-          "id": "course-3",
-          "title": "Spring Boot 실전 프로젝트",
-          "description": "JPA, Security, REST API 설계까지 엔터프라이즈급 백엔드 시스템 구축",
-          "category": "backend",
-          "tags": ["Java", "Spring", "JPA"],
-          "thumbnail": {
-            "src": "/images/courses/spring.jpg",
-            "alt": "Spring Boot 실전 프로젝트 강좌 썸네일"
-          },
-          "instructor": "박백엔드",
-          "link": "/courses/spring-boot",
-          "ariaLabel": "Spring Boot 실전 프로젝트 강좌 상세 보기"
-        },
-        {
-          "id": "course-4",
-          "title": "ChatGPT API 활용법",
-          "description": "프롬프트 엔지니어링부터 서비스 통합까지 AI 활용의 모든 것",
-          "category": "ai",
-          "tags": ["ChatGPT", "OpenAI", "프롬프트"],
-          "thumbnail": {
-            "src": "/images/courses/chatgpt.jpg",
-            "alt": "ChatGPT API 활용법 강좌 썸네일"
-          },
-          "instructor": "최에이아이",
-          "link": "/courses/chatgpt-api",
-          "ariaLabel": "ChatGPT API 활용법 강좌 상세 보기"
-        }
-      ],
+      "displayIds": ["figma-master", "vue3-guide", "spring-boot", "chatgpt-api"],
       "moreLink": {
         "label": "전체 강좌 보기",
         "to": "/courses",
@@ -139,111 +93,18 @@
       }
     },
     "instructors": {
-      "_desc": "소개 카드 섹션",
+      "_desc": "메인 페이지 강사 섹션 설정 - 표시할 강사 ID 목록",
       "title": "강사진 소개",
       "subtitle": "현직에서 활약하는 전문가들이 직접 가르칩니다",
       "ariaLabel": "강사진 소개 섹션",
-      "instructors": [
-        {
-          "id": "instructor-1",
-          "name": "김디자인",
-          "role": "UI/UX 디자이너",
-          "company": "네카라쿠배 출신",
-          "profileImage": {
-            "src": "/images/instructors/kim.jpg",
-            "alt": "김디자인 강사 프로필 사진"
-          },
-          "specialties": ["UI/UX", "Figma", "디자인 시스템"],
-          "description": "10년차 디자이너로 다수의 대형 서비스 UI/UX를 설계했습니다.",
-          "ariaLabel": "김디자인 강사 정보"
-        },
-        {
-          "id": "instructor-2",
-          "name": "이프론트",
-          "role": "프론트엔드 개발자",
-          "company": "테크 스타트업 CTO",
-          "profileImage": {
-            "src": "/images/instructors/lee.jpg",
-            "alt": "이프론트 강사 프로필 사진"
-          },
-          "specialties": ["Vue", "React", "TypeScript"],
-          "description": "프론트엔드 아키텍처 설계와 성능 최적화 전문가입니다.",
-          "ariaLabel": "이프론트 강사 정보"
-        },
-        {
-          "id": "instructor-3",
-          "name": "박백엔드",
-          "role": "백엔드 개발자",
-          "company": "핀테크 시니어 엔지니어",
-          "profileImage": {
-            "src": "/images/instructors/park.jpg",
-            "alt": "박백엔드 강사 프로필 사진"
-          },
-          "specialties": ["Java", "Spring", "MSA"],
-          "description": "대용량 트래픽 처리와 마이크로서비스 아키텍처 전문가입니다.",
-          "ariaLabel": "박백엔드 강사 정보"
-        },
-        {
-          "id": "instructor-4",
-          "name": "최에이아이",
-          "role": "AI 엔지니어",
-          "company": "AI 연구소 리드",
-          "profileImage": {
-            "src": "/images/instructors/choi.jpg",
-            "alt": "최에이아이 강사 프로필 사진"
-          },
-          "specialties": ["LLM", "ML/DL", "프롬프트 엔지니어링"],
-          "description": "최신 AI 기술과 실무 적용 노하우를 공유합니다.",
-          "ariaLabel": "최에이아이 강사 정보"
-        }
-      ]
+      "displayIds": ["instructor-1", "instructor-2", "instructor-3", "instructor-4"]
     },
     "reviews": {
-      "_desc": "수강생 후기 섹션 (포토 후기)",
+      "_desc": "메인 페이지 후기 섹션 설정 - 표시할 후기 ID 목록",
       "title": "수강생 후기",
       "subtitle": "실제 수강생들의 생생한 후기를 확인하세요",
       "ariaLabel": "수강생 후기 섹션",
-      "reviews": [
-        {
-          "id": "review-1",
-          "nickname": "개발자지망생",
-          "courseName": "Vue 3 완벽 가이드",
-          "title": "실무에 바로 적용할 수 있는 강의!",
-          "content": "Vue 3의 Composition API를 제대로 이해할 수 있었습니다. 실무 예제가 많아서 바로 적용할 수 있었어요!",
-          "image": {
-            "src": "/images/reviews/review-1.jpg",
-            "alt": "Vue 3 강의 수강 후기 이미지"
-          },
-          "rating": 5,
-          "ariaLabel": "개발자지망생님의 Vue 3 완벽 가이드 수강 후기"
-        },
-        {
-          "id": "review-2",
-          "nickname": "디자인초보",
-          "courseName": "Figma 마스터 클래스",
-          "title": "디자인 시스템까지 완벽 이해!",
-          "content": "Figma 기초부터 디자인 시스템까지! 포트폴리오 만드는 데 큰 도움이 됐습니다.",
-          "image": {
-            "src": "/images/reviews/review-2.jpg",
-            "alt": "Figma 강의 수강 후기 이미지"
-          },
-          "rating": 5,
-          "ariaLabel": "디자인초보님의 Figma 마스터 클래스 수강 후기"
-        },
-        {
-          "id": "review-3",
-          "nickname": "취준생A",
-          "courseName": "Spring Boot 실전 프로젝트",
-          "title": "취업 준비에 정말 도움됐어요!",
-          "content": "실제 서비스를 만들면서 배우니까 이해가 빨랐어요. 취업 준비에 정말 도움됐습니다!",
-          "image": {
-            "src": "/images/reviews/review-3.jpg",
-            "alt": "Spring Boot 강의 수강 후기 이미지"
-          },
-          "rating": 4,
-          "ariaLabel": "취준생A님의 Spring Boot 실전 프로젝트 수강 후기"
-        }
-      ],
+      "displayIds": ["review-1", "review-2", "review-3"],
       "moreLink": {
         "label": "후기 더 보기",
         "to": "/reviews",
@@ -251,93 +112,17 @@
       }
     },
     "partners": {
-      "_desc": "파트너사 로고 섹션",
+      "_desc": "메인 페이지 파트너사 섹션 설정",
       "title": "함께하는 기업",
       "subtitle": "에듀테크 아카데미와 함께하는 파트너사입니다",
-      "ariaLabel": "파트너사 로고 섹션",
-      "partners": [
-        {
-          "id": "partner-1",
-          "name": "테크스타트",
-          "logo": {
-            "src": "/images/partners/techstart.png",
-            "alt": "테크스타트 로고"
-          }
-        },
-        {
-          "id": "partner-2",
-          "name": "디자인랩",
-          "logo": {
-            "src": "/images/partners/designlab.png",
-            "alt": "디자인랩 로고"
-          }
-        },
-        {
-          "id": "partner-3",
-          "name": "코드팩토리",
-          "logo": {
-            "src": "/images/partners/codefactory.png",
-            "alt": "코드팩토리 로고"
-          }
-        },
-        {
-          "id": "partner-4",
-          "name": "AI솔루션",
-          "logo": {
-            "src": "/images/partners/aisolution.png",
-            "alt": "AI솔루션 로고"
-          }
-        },
-        {
-          "id": "partner-5",
-          "name": "클라우드원",
-          "logo": {
-            "src": "/images/partners/cloudone.png",
-            "alt": "클라우드원 로고"
-          }
-        },
-        {
-          "id": "partner-6",
-          "name": "데이터브릿지",
-          "logo": {
-            "src": "/images/partners/databridge.png",
-            "alt": "데이터브릿지 로고"
-          }
-        }
-      ]
+      "ariaLabel": "파트너사 로고 섹션"
     },
     "faq": {
-      "_desc": "FAQ 자주 묻는 질문 섹션",
+      "_desc": "메인 페이지 FAQ 섹션 설정 - 표시할 FAQ ID 목록",
       "title": "자주 묻는 질문",
       "subtitle": "궁금한 점이 있으신가요?",
       "ariaLabel": "자주 묻는 질문 섹션",
-      "faqList": [
-        {
-          "id": "faq-1",
-          "question": "강의 수강 기간은 어떻게 되나요?",
-          "answer": "모든 강의는 결제일로부터 1년간 무제한 수강이 가능합니다. 수강 기간 내 업데이트되는 내용도 무료로 제공됩니다."
-        },
-        {
-          "id": "faq-2",
-          "question": "환불 정책은 어떻게 되나요?",
-          "answer": "결제 후 7일 이내, 강의 진도율 10% 미만인 경우 전액 환불이 가능합니다. 자세한 내용은 이용약관을 참고해 주세요."
-        },
-        {
-          "id": "faq-3",
-          "question": "수료증이 발급되나요?",
-          "answer": "네, 강의를 80% 이상 수강하시면 수료증을 PDF로 다운로드하실 수 있습니다. 수료증에는 수강자명, 강의명, 수료일이 기재됩니다."
-        },
-        {
-          "id": "faq-4",
-          "question": "강의 질문은 어떻게 하나요?",
-          "answer": "각 강의 페이지 내 Q&A 게시판을 통해 질문하실 수 있습니다. 강사님이 직접 답변해 드리며, 평균 24시간 이내 답변을 드립니다."
-        },
-        {
-          "id": "faq-5",
-          "question": "기업/단체 수강 할인이 있나요?",
-          "answer": "5인 이상 단체 수강 시 할인 혜택이 있습니다. 문의하기를 통해 연락 주시면 맞춤 견적을 안내해 드립니다."
-        }
-      ],
+      "displayIds": ["faq-general-1", "faq-general-2", "faq-general-3", "faq-general-4", "faq-general-5"],
       "moreLink": {
         "label": "더 많은 질문 보기",
         "to": "/faq",
@@ -345,7 +130,7 @@
       }
     },
     "contact": {
-      "_desc": "문의하기 폼 섹션",
+      "_desc": "메인 페이지 문의하기 섹션",
       "title": "문의하기",
       "subtitle": "궁금한 점이나 제안사항이 있으시면 언제든 연락주세요",
       "ariaLabel": "문의하기 폼 섹션",
@@ -432,48 +217,12 @@
       "title": "우리가 추구하는 가치",
       "ariaLabel": "핵심가치 섹션",
       "values": [
-        {
-          "id": "value-1",
-          "icon": "practice",
-          "title": "실무 중심",
-          "description": "현업에서 바로 적용 가능한 실전 커리큘럼을 제공합니다.",
-          "ariaLabel": "실무 중심 가치"
-        },
-        {
-          "id": "value-2",
-          "icon": "mentoring",
-          "title": "1:1 멘토링",
-          "description": "개인별 맞춤 피드백으로 빠른 성장을 돕습니다.",
-          "ariaLabel": "1:1 멘토링 가치"
-        },
-        {
-          "id": "value-3",
-          "icon": "community",
-          "title": "커뮤니티",
-          "description": "수강생 간 네트워킹과 정보 공유를 지원합니다.",
-          "ariaLabel": "커뮤니티 가치"
-        },
-        {
-          "id": "value-4",
-          "icon": "update",
-          "title": "최신 트렌드",
-          "description": "빠르게 변화하는 기술 트렌드를 반영한 콘텐츠를 제공합니다.",
-          "ariaLabel": "최신 트렌드 가치"
-        },
-        {
-          "id": "value-5",
-          "icon": "certificate",
-          "title": "수료 인증",
-          "description": "과정 완료 시 공인된 수료증을 발급합니다.",
-          "ariaLabel": "수료 인증 가치"
-        },
-        {
-          "id": "value-6",
-          "icon": "support",
-          "title": "취업 연계",
-          "description": "파트너사와 연계한 취업 지원 프로그램을 운영합니다.",
-          "ariaLabel": "취업 연계 가치"
-        }
+        { "id": "value-1", "icon": "practice", "title": "실무 중심", "description": "현업에서 바로 적용 가능한 실전 커리큘럼을 제공합니다.", "ariaLabel": "실무 중심 가치" },
+        { "id": "value-2", "icon": "mentoring", "title": "1:1 멘토링", "description": "개인별 맞춤 피드백으로 빠른 성장을 돕습니다.", "ariaLabel": "1:1 멘토링 가치" },
+        { "id": "value-3", "icon": "community", "title": "커뮤니티", "description": "수강생 간 네트워킹과 정보 공유를 지원합니다.", "ariaLabel": "커뮤니티 가치" },
+        { "id": "value-4", "icon": "update", "title": "최신 트렌드", "description": "빠르게 변화하는 기술 트렌드를 반영한 콘텐츠를 제공합니다.", "ariaLabel": "최신 트렌드 가치" },
+        { "id": "value-5", "icon": "certificate", "title": "수료 인증", "description": "과정 완료 시 공인된 수료증을 발급합니다.", "ariaLabel": "수료 인증 가치" },
+        { "id": "value-6", "icon": "support", "title": "취업 연계", "description": "파트너사와 연계한 취업 지원 프로그램을 운영합니다.", "ariaLabel": "취업 연계 가치" }
       ]
     },
     "stats": {
@@ -490,15 +239,7 @@
     "partners": {
       "badge": "파트너사 현황",
       "title": "함께하는 파트너사",
-      "ariaLabel": "파트너사 현황 섹션",
-      "partners": [
-        { "id": "partner-1", "name": "테크스타트", "logo": { "src": "/images/partners/techstart.png", "alt": "테크스타트 로고" } },
-        { "id": "partner-2", "name": "디자인랩", "logo": { "src": "/images/partners/designlab.png", "alt": "디자인랩 로고" } },
-        { "id": "partner-3", "name": "코드팩토리", "logo": { "src": "/images/partners/codefactory.png", "alt": "코드팩토리 로고" } },
-        { "id": "partner-4", "name": "AI솔루션", "logo": { "src": "/images/partners/aisolution.png", "alt": "AI솔루션 로고" } },
-        { "id": "partner-5", "name": "클라우드원", "logo": { "src": "/images/partners/cloudone.png", "alt": "클라우드원 로고" } },
-        { "id": "partner-6", "name": "데이터브릿지", "logo": { "src": "/images/partners/databridge.png", "alt": "데이터브릿지 로고" } }
-      ]
+      "ariaLabel": "파트너사 현황 섹션"
     },
     "contact": {
       "_desc": "연락처 카드 섹션",
@@ -536,160 +277,6 @@
           "buttonLabel": "문의하기",
           "buttonAriaLabel": "문의하기 페이지로 이동",
           "external": false
-        }
-      ]
-    }
-  },
-  "coursesPage": {
-    "_desc": "강의 페이지 - categories는 공통 정의 사용",
-    "meta": {
-      "title": "강의 목록 | 에듀테크 아카데미",
-      "description": "실무 중심의 다양한 IT 강의를 만나보세요. 기획, 디자인, 프론트엔드, 백엔드, AI, 블록체인, 데이터 분야의 전문 강좌."
-    },
-    "hero": {
-      "title": "당신의 성장을 위한\n최고의 강의",
-      "description": "현직 전문가가 직접 설계한 실무 중심 커리큘럼으로 빠르게 성장하세요.",
-      "backgroundImage": {
-        "src": "/images/courses-hero-bg.jpg",
-        "alt": "강의실에서 수업을 듣는 학생들"
-      },
-      "ariaLabel": "강의 페이지 히어로 섹션"
-    },
-    "courseList": [
-      {
-        "id": "course-1",
-        "title": "Figma 마스터 클래스",
-        "description": "피그마 기초부터 디자인 시스템까지, 실무에서 바로 쓰는 UI/UX 디자인",
-        "category": "design",
-        "tags": ["Figma", "UI/UX", "디자인시스템"],
-        "thumbnail": { "src": "/images/courses/figma.jpg", "alt": "Figma 마스터 클래스 썸네일" },
-        "instructor": "김디자인",
-        "link": "/courses/figma-master",
-        "ariaLabel": "Figma 마스터 클래스 상세 보기"
-      },
-      {
-        "id": "course-2",
-        "title": "Vue 3 완벽 가이드",
-        "description": "Composition API와 TypeScript로 배우는 모던 Vue 개발",
-        "category": "frontend",
-        "tags": ["Vue", "TypeScript", "Composition API"],
-        "thumbnail": { "src": "/images/courses/vue3.jpg", "alt": "Vue 3 완벽 가이드 썸네일" },
-        "instructor": "이프론트",
-        "link": "/courses/vue3-guide",
-        "ariaLabel": "Vue 3 완벽 가이드 상세 보기"
-      },
-      {
-        "id": "course-3",
-        "title": "Spring Boot 실전 프로젝트",
-        "description": "JPA와 Spring Security로 만드는 실무 백엔드 시스템",
-        "category": "backend",
-        "tags": ["Java", "Spring Boot", "JPA"],
-        "thumbnail": { "src": "/images/courses/spring.jpg", "alt": "Spring Boot 실전 프로젝트 썸네일" },
-        "instructor": "박백엔드",
-        "link": "/courses/spring-boot",
-        "ariaLabel": "Spring Boot 실전 프로젝트 상세 보기"
-      },
-      {
-        "id": "course-4",
-        "title": "ChatGPT API 활용법",
-        "description": "OpenAI API로 나만의 AI 서비스 만들기",
-        "category": "ai",
-        "tags": ["ChatGPT", "OpenAI", "프롬프트"],
-        "thumbnail": { "src": "/images/courses/chatgpt.jpg", "alt": "ChatGPT API 활용법 썸네일" },
-        "instructor": "최에이아이",
-        "link": "/courses/chatgpt-api",
-        "ariaLabel": "ChatGPT API 활용법 상세 보기"
-      },
-      {
-        "id": "course-5",
-        "title": "서비스 기획 실무",
-        "description": "아이디어부터 런칭까지, 성공하는 서비스 기획의 모든 것",
-        "category": "planning",
-        "tags": ["서비스기획", "PRD", "사용자분석"],
-        "thumbnail": { "src": "/images/courses/planning.jpg", "alt": "서비스 기획 실무 썸네일" },
-        "instructor": "정기획",
-        "link": "/courses/service-planning",
-        "ariaLabel": "서비스 기획 실무 상세 보기"
-      },
-      {
-        "id": "course-6",
-        "title": "React + Next.js 풀스택",
-        "description": "서버 사이드 렌더링과 API Routes로 풀스택 개발하기",
-        "category": "frontend",
-        "tags": ["React", "Next.js", "SSR"],
-        "thumbnail": { "src": "/images/courses/nextjs.jpg", "alt": "React + Next.js 풀스택 썸네일" },
-        "instructor": "이프론트",
-        "link": "/courses/nextjs-fullstack",
-        "ariaLabel": "React + Next.js 풀스택 상세 보기"
-      },
-      {
-        "id": "course-7",
-        "title": "이더리움 스마트 컨트랙트",
-        "description": "Solidity로 배우는 블록체인 DApp 개발",
-        "category": "blockchain",
-        "tags": ["Ethereum", "Solidity", "Web3"],
-        "thumbnail": { "src": "/images/courses/blockchain.jpg", "alt": "이더리움 스마트 컨트랙트 썸네일" },
-        "instructor": "한블록",
-        "link": "/courses/ethereum-smart-contract",
-        "ariaLabel": "이더리움 스마트 컨트랙트 상세 보기"
-      },
-      {
-        "id": "course-8",
-        "title": "파이썬 데이터 분석",
-        "description": "Pandas와 시각화로 배우는 데이터 분석 입문",
-        "category": "data",
-        "tags": ["Python", "Pandas", "데이터분석"],
-        "thumbnail": { "src": "/images/courses/data-analysis.jpg", "alt": "파이썬 데이터 분석 썸네일" },
-        "instructor": "강데이터",
-        "link": "/courses/python-data-analysis",
-        "ariaLabel": "파이썬 데이터 분석 상세 보기"
-      }
-    ],
-    "instructors": {
-      "badge": "강사진",
-      "title": "최고의 전문가에게 배우세요",
-      "description": "현업에서 활약하는 전문가들이 직접 가르칩니다",
-      "ariaLabel": "강사진 소개 섹션",
-      "list": [
-        {
-          "id": "instructor-1",
-          "name": "김디자인",
-          "role": "UI/UX 디자이너",
-          "company": "네카라쿠배 출신",
-          "profileImage": { "src": "/images/instructors/kim.jpg", "alt": "김디자인 강사 프로필" },
-          "specialties": ["Figma", "디자인시스템", "프로토타이핑"],
-          "description": "10년차 디자이너로 다수의 대형 서비스 UI/UX를 설계했습니다.",
-          "ariaLabel": "김디자인 강사 정보"
-        },
-        {
-          "id": "instructor-2",
-          "name": "이프론트",
-          "role": "프론트엔드 개발자",
-          "company": "테크 스타트업 CTO",
-          "profileImage": { "src": "/images/instructors/lee.jpg", "alt": "이프론트 강사 프로필" },
-          "specialties": ["Vue", "React", "TypeScript"],
-          "description": "프론트엔드 아키텍처 설계와 성능 최적화 전문가입니다.",
-          "ariaLabel": "이프론트 강사 정보"
-        },
-        {
-          "id": "instructor-3",
-          "name": "박백엔드",
-          "role": "백엔드 개발자",
-          "company": "핀테크 시니어 엔지니어",
-          "profileImage": { "src": "/images/instructors/park.jpg", "alt": "박백엔드 강사 프로필" },
-          "specialties": ["Java", "Spring", "MSA"],
-          "description": "대용량 트래픽 처리와 마이크로서비스 아키텍처 전문가입니다.",
-          "ariaLabel": "박백엔드 강사 정보"
-        },
-        {
-          "id": "instructor-4",
-          "name": "최에이아이",
-          "role": "AI 엔지니어",
-          "company": "AI 연구소 리드",
-          "profileImage": { "src": "/images/instructors/choi.jpg", "alt": "최에이아이 강사 프로필" },
-          "specialties": ["LLM", "프롬프트엔지니어링", "MLOps"],
-          "description": "최신 AI 기술과 실무 적용 노하우를 공유합니다.",
-          "ariaLabel": "최에이아이 강사 정보"
         }
       ]
     }

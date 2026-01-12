@@ -7,6 +7,12 @@ import PartnersSection from '~/components/common/PartnersSection.vue'
 
 const aboutData = mainData.about
 
+// 파트너 섹션: 설정 + 공통 파트너 데이터 결합
+const partnersSection = {
+  ...aboutData.partners,
+  partners: mainData.partners.list
+}
+
 useSeoMeta({
   title: aboutData.meta.title,
   description: aboutData.meta.description,
@@ -24,7 +30,7 @@ useHead({
     <AboutHeroSection :data="aboutData.hero" />
     <CoreValuesSection :data="aboutData.coreValues" />
     <StatsSection :data="aboutData.stats" />
-    <PartnersSection :data="aboutData.partners" variant="brand" />
+    <PartnersSection :data="partnersSection" variant="brand" />
   </main>
 </template>
 

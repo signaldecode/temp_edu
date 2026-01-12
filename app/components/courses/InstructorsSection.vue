@@ -7,6 +7,10 @@ defineProps({
   data: {
     type: Object,
     required: true
+  },
+  variant: {
+    type: String,
+    default: 'courses'
   }
 })
 
@@ -27,6 +31,7 @@ const handleModalClose = () => {
 <template>
   <section
     class="instructors-section section"
+    :class="`instructors-section--${variant}`"
     :aria-label="data.ariaLabel ?? data.title"
   >
     <div class="container">

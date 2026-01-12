@@ -1,19 +1,6 @@
 {
-  "_desc": "강의 페이지 및 강의 상세 데이터 - categories는 mainData.json의 공통 정의 사용",
-  "meta": {
-    "title": "강의 목록 | 에듀테크 아카데미",
-    "description": "실무 중심의 다양한 IT 강의를 만나보세요. 기획, 디자인, 프론트엔드, 백엔드, AI, 블록체인, 데이터 분야의 전문 강좌."
-  },
-  "hero": {
-    "title": "당신의 성장을 위한\n최고의 강의",
-    "description": "현직 전문가가 직접 설계한 실무 중심 커리큘럼으로 빠르게 성장하세요.",
-    "backgroundImage": {
-      "src": "/images/courses-hero-bg.jpg",
-      "alt": "강의실에서 수업을 듣는 학생들"
-    },
-    "ariaLabel": "강의 페이지 히어로 섹션"
-  },
-  "courses": [
+  "_desc": "강의 마스터 데이터 - 모든 페이지에서 이 데이터를 단일 소스로 참조",
+  "list": [
     {
       "id": "figma-master",
       "title": "Figma 마스터 클래스",
@@ -21,7 +8,6 @@
       "category": "design",
       "tags": ["Figma", "UI/UX", "디자인시스템"],
       "thumbnail": { "src": "/images/courses/figma.jpg", "alt": "Figma 마스터 클래스 썸네일" },
-      "instructor": "김디자인",
       "instructorId": "instructor-1",
       "link": "/courses/figma-master",
       "ariaLabel": "Figma 마스터 클래스 상세 보기",
@@ -35,12 +21,7 @@
         "reviewCount": 324,
         "studentCount": 1847,
         "updatedAt": "2024.12",
-        "features": [
-          "평생 소장 가능",
-          "수료증 발급",
-          "실습 파일 제공",
-          "Q&A 게시판"
-        ],
+        "features": ["평생 소장 가능", "수료증 발급", "실습 파일 제공", "Q&A 게시판"],
         "whatYouLearn": [
           "Figma 인터페이스와 핵심 기능 완벽 이해",
           "Auto Layout으로 반응형 디자인 구현",
@@ -76,10 +57,7 @@
             ]
           }
         ],
-        "requirements": [
-          "디자인 기초 지식 (권장)",
-          "Figma 계정 (무료)"
-        ],
+        "requirements": ["디자인 기초 지식 (권장)", "Figma 계정 (무료)"],
         "targetAudience": [
           "UI/UX 디자이너로 취업을 준비하는 분",
           "Figma를 체계적으로 배우고 싶은 현직 디자이너",
@@ -94,7 +72,6 @@
       "category": "frontend",
       "tags": ["Vue", "TypeScript", "Composition API"],
       "thumbnail": { "src": "/images/courses/vue3.jpg", "alt": "Vue 3 완벽 가이드 썸네일" },
-      "instructor": "이프론트",
       "instructorId": "instructor-2",
       "link": "/courses/vue3-guide",
       "ariaLabel": "Vue 3 완벽 가이드 상세 보기",
@@ -108,12 +85,7 @@
         "reviewCount": 512,
         "studentCount": 2341,
         "updatedAt": "2024.11",
-        "features": [
-          "평생 소장 가능",
-          "수료증 발급",
-          "실습 프로젝트 3개",
-          "1:1 코드 리뷰"
-        ],
+        "features": ["평생 소장 가능", "수료증 발급", "실습 프로젝트 3개", "1:1 코드 리뷰"],
         "whatYouLearn": [
           "Vue 3 핵심 개념과 Composition API",
           "TypeScript와 Vue의 완벽한 통합",
@@ -139,10 +111,7 @@
             ]
           }
         ],
-        "requirements": [
-          "HTML, CSS, JavaScript 기초 지식",
-          "Node.js 설치"
-        ],
+        "requirements": ["HTML, CSS, JavaScript 기초 지식", "Node.js 설치"],
         "targetAudience": [
           "Vue를 처음 배우는 프론트엔드 개발자",
           "Vue 2에서 Vue 3로 마이그레이션하려는 분",
@@ -157,7 +126,6 @@
       "category": "backend",
       "tags": ["Java", "Spring Boot", "JPA"],
       "thumbnail": { "src": "/images/courses/spring.jpg", "alt": "Spring Boot 실전 프로젝트 썸네일" },
-      "instructor": "박백엔드",
       "instructorId": "instructor-3",
       "link": "/courses/spring-boot",
       "ariaLabel": "Spring Boot 실전 프로젝트 상세 보기",
@@ -171,12 +139,7 @@
         "reviewCount": 421,
         "studentCount": 1923,
         "updatedAt": "2024.12",
-        "features": [
-          "평생 소장 가능",
-          "수료증 발급",
-          "실전 프로젝트 2개",
-          "코드 리뷰 제공"
-        ],
+        "features": ["평생 소장 가능", "수료증 발급", "실전 프로젝트 2개", "코드 리뷰 제공"],
         "whatYouLearn": [
           "Spring Boot 3.x 핵심 기능",
           "JPA와 QueryDSL로 데이터 다루기",
@@ -185,10 +148,7 @@
           "Docker로 배포 환경 구성"
         ],
         "curriculum": [],
-        "requirements": [
-          "Java 기초 문법 이해",
-          "SQL 기본 지식"
-        ],
+        "requirements": ["Java 기초 문법 이해", "SQL 기본 지식"],
         "targetAudience": [
           "백엔드 개발자로 취업을 준비하는 분",
           "Spring Boot를 실무 수준으로 배우고 싶은 분"
@@ -202,7 +162,6 @@
       "category": "ai",
       "tags": ["ChatGPT", "OpenAI", "프롬프트"],
       "thumbnail": { "src": "/images/courses/chatgpt.jpg", "alt": "ChatGPT API 활용법 썸네일" },
-      "instructor": "최에이아이",
       "instructorId": "instructor-4",
       "link": "/courses/chatgpt-api",
       "ariaLabel": "ChatGPT API 활용법 상세 보기",
@@ -216,12 +175,7 @@
         "reviewCount": 289,
         "studentCount": 1456,
         "updatedAt": "2024.12",
-        "features": [
-          "평생 소장 가능",
-          "수료증 발급",
-          "API 크레딧 제공",
-          "실습 프로젝트"
-        ],
+        "features": ["평생 소장 가능", "수료증 발급", "API 크레딧 제공", "실습 프로젝트"],
         "whatYouLearn": [
           "OpenAI API 완벽 이해",
           "효과적인 프롬프트 엔지니어링",
@@ -230,10 +184,7 @@
           "실제 서비스에 AI 통합하기"
         ],
         "curriculum": [],
-        "requirements": [
-          "기본적인 프로그래밍 경험",
-          "OpenAI API 키 (유료)"
-        ],
+        "requirements": ["기본적인 프로그래밍 경험", "OpenAI API 키 (유료)"],
         "targetAudience": [
           "AI를 서비스에 적용하고 싶은 개발자",
           "ChatGPT API를 배우고 싶은 누구나"
@@ -247,7 +198,6 @@
       "category": "planning",
       "tags": ["서비스기획", "PRD", "사용자분석"],
       "thumbnail": { "src": "/images/courses/planning.jpg", "alt": "서비스 기획 실무 썸네일" },
-      "instructor": "정기획",
       "instructorId": "instructor-5",
       "link": "/courses/service-planning",
       "ariaLabel": "서비스 기획 실무 상세 보기",
@@ -261,12 +211,7 @@
         "reviewCount": 198,
         "studentCount": 876,
         "updatedAt": "2024.11",
-        "features": [
-          "평생 소장 가능",
-          "수료증 발급",
-          "기획 템플릿 제공",
-          "포트폴리오 피드백"
-        ],
+        "features": ["평생 소장 가능", "수료증 발급", "기획 템플릿 제공", "포트폴리오 피드백"],
         "whatYouLearn": [
           "서비스 기획 프로세스 전체 이해",
           "사용자 리서치와 페르소나 설정",
@@ -275,9 +220,7 @@
           "데이터 기반 의사결정"
         ],
         "curriculum": [],
-        "requirements": [
-          "특별한 선수 지식 없음"
-        ],
+        "requirements": ["특별한 선수 지식 없음"],
         "targetAudience": [
           "PM/기획자로 취업을 준비하는 분",
           "체계적인 기획 방법론을 배우고 싶은 분"
@@ -291,7 +234,6 @@
       "category": "frontend",
       "tags": ["React", "Next.js", "SSR"],
       "thumbnail": { "src": "/images/courses/nextjs.jpg", "alt": "React + Next.js 풀스택 썸네일" },
-      "instructor": "이프론트",
       "instructorId": "instructor-2",
       "link": "/courses/nextjs-fullstack",
       "ariaLabel": "React + Next.js 풀스택 상세 보기",
@@ -305,12 +247,7 @@
         "reviewCount": 387,
         "studentCount": 1654,
         "updatedAt": "2024.12",
-        "features": [
-          "평생 소장 가능",
-          "수료증 발급",
-          "실전 프로젝트 3개",
-          "배포 가이드"
-        ],
+        "features": ["평생 소장 가능", "수료증 발급", "실전 프로젝트 3개", "배포 가이드"],
         "whatYouLearn": [
           "Next.js App Router 완벽 이해",
           "서버 컴포넌트와 클라이언트 컴포넌트",
@@ -319,10 +256,7 @@
           "Vercel 배포와 최적화"
         ],
         "curriculum": [],
-        "requirements": [
-          "React 기초 지식",
-          "JavaScript/TypeScript 이해"
-        ],
+        "requirements": ["React 기초 지식", "JavaScript/TypeScript 이해"],
         "targetAudience": [
           "풀스택 개발에 관심 있는 프론트엔드 개발자",
           "Next.js를 제대로 배우고 싶은 분"
@@ -336,7 +270,6 @@
       "category": "blockchain",
       "tags": ["Ethereum", "Solidity", "Web3"],
       "thumbnail": { "src": "/images/courses/blockchain.jpg", "alt": "이더리움 스마트 컨트랙트 썸네일" },
-      "instructor": "한블록",
       "instructorId": "instructor-6",
       "link": "/courses/ethereum-smart-contract",
       "ariaLabel": "이더리움 스마트 컨트랙트 상세 보기",
@@ -350,12 +283,7 @@
         "reviewCount": 156,
         "studentCount": 723,
         "updatedAt": "2024.10",
-        "features": [
-          "평생 소장 가능",
-          "수료증 발급",
-          "테스트넷 실습",
-          "NFT 프로젝트"
-        ],
+        "features": ["평생 소장 가능", "수료증 발급", "테스트넷 실습", "NFT 프로젝트"],
         "whatYouLearn": [
           "이더리움과 블록체인 기초",
           "Solidity 문법과 패턴",
@@ -364,10 +292,7 @@
           "보안과 가스 최적화"
         ],
         "curriculum": [],
-        "requirements": [
-          "JavaScript 기초 지식",
-          "블록체인 기본 개념 이해"
-        ],
+        "requirements": ["JavaScript 기초 지식", "블록체인 기본 개념 이해"],
         "targetAudience": [
           "블록체인 개발에 관심 있는 개발자",
           "Web3 생태계에 진입하고 싶은 분"
@@ -381,7 +306,6 @@
       "category": "data",
       "tags": ["Python", "Pandas", "데이터분석"],
       "thumbnail": { "src": "/images/courses/data-analysis.jpg", "alt": "파이썬 데이터 분석 썸네일" },
-      "instructor": "강데이터",
       "instructorId": "instructor-7",
       "link": "/courses/python-data-analysis",
       "ariaLabel": "파이썬 데이터 분석 상세 보기",
@@ -395,12 +319,7 @@
         "reviewCount": 267,
         "studentCount": 1234,
         "updatedAt": "2024.11",
-        "features": [
-          "평생 소장 가능",
-          "수료증 발급",
-          "데이터셋 제공",
-          "실습 노트북"
-        ],
+        "features": ["평생 소장 가능", "수료증 발급", "데이터셋 제공", "실습 노트북"],
         "whatYouLearn": [
           "Python 데이터 분석 환경 구축",
           "Pandas로 데이터 전처리",
@@ -409,62 +328,12 @@
           "실제 데이터 분석 프로젝트"
         ],
         "curriculum": [],
-        "requirements": [
-          "Python 기초 문법"
-        ],
+        "requirements": ["Python 기초 문법"],
         "targetAudience": [
           "데이터 분석가를 꿈꾸는 분",
           "업무에 데이터 분석을 적용하고 싶은 분"
         ]
       }
     }
-  ],
-  "instructors": {
-    "badge": "강사진",
-    "title": "최고의 전문가에게 배우세요",
-    "description": "현업에서 활약하는 전문가들이 직접 가르칩니다",
-    "ariaLabel": "강사진 소개 섹션",
-    "list": [
-      {
-        "id": "instructor-1",
-        "name": "김디자인",
-        "role": "UI/UX 디자이너",
-        "company": "네카라쿠배 출신",
-        "profileImage": { "src": "/images/instructors/kim.jpg", "alt": "김디자인 강사 프로필" },
-        "specialties": ["Figma", "디자인시스템", "프로토타이핑"],
-        "description": "10년차 디자이너로 다수의 대형 서비스 UI/UX를 설계했습니다.",
-        "ariaLabel": "김디자인 강사 정보"
-      },
-      {
-        "id": "instructor-2",
-        "name": "이프론트",
-        "role": "프론트엔드 개발자",
-        "company": "테크 스타트업 CTO",
-        "profileImage": { "src": "/images/instructors/lee.jpg", "alt": "이프론트 강사 프로필" },
-        "specialties": ["Vue", "React", "TypeScript"],
-        "description": "프론트엔드 아키텍처 설계와 성능 최적화 전문가입니다.",
-        "ariaLabel": "이프론트 강사 정보"
-      },
-      {
-        "id": "instructor-3",
-        "name": "박백엔드",
-        "role": "백엔드 개발자",
-        "company": "핀테크 시니어 엔지니어",
-        "profileImage": { "src": "/images/instructors/park.jpg", "alt": "박백엔드 강사 프로필" },
-        "specialties": ["Java", "Spring", "MSA"],
-        "description": "대용량 트래픽 처리와 마이크로서비스 아키텍처 전문가입니다.",
-        "ariaLabel": "박백엔드 강사 정보"
-      },
-      {
-        "id": "instructor-4",
-        "name": "최에이아이",
-        "role": "AI 엔지니어",
-        "company": "AI 연구소 리드",
-        "profileImage": { "src": "/images/instructors/choi.jpg", "alt": "최에이아이 강사 프로필" },
-        "specialties": ["LLM", "프롬프트엔지니어링", "MLOps"],
-        "description": "최신 AI 기술과 실무 적용 노하우를 공유합니다.",
-        "ariaLabel": "최에이아이 강사 정보"
-      }
-    ]
-  }
+  ]
 }

@@ -1,18 +1,16 @@
 <script setup>
-import coursesData from '~/data/coursesData.json'
+const { getCourseById, getInstructorById } = useData()
 
 const route = useRoute()
 const courseId = route.params.id
 
 const course = computed(() => {
-  return coursesData.courses.find(c => c.id === courseId)
+  return getCourseById(courseId)
 })
 
 const instructor = computed(() => {
   if (!course.value) return null
-  return coursesData.instructors.list.find(
-    i => i.id === course.value.instructorId
-  )
+  return getInstructorById(course.value.instructorId)
 })
 
 if (!course.value) {
